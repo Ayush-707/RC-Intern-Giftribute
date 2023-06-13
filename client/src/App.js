@@ -1,5 +1,9 @@
 
-import UserHome from './pages/User/Home'
+import Landing from './pages/Authentication/LandingPage'
+
+
+
+
 import { Route,Routes } from "react-router-dom"
 import './App.css'
 
@@ -10,11 +14,19 @@ function App() {
   <>
   
 
-  
+ 
       <Routes>
           
-            <Route path = '/' element = {<UserHome/>} />
-  
+            <Route exact path = '/' element = {<Landing/>} />
+
+
+           
+          
+
+
+
+
+            
         
       </Routes>
     
