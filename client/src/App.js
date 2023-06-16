@@ -1,5 +1,7 @@
 
-import Landing from './pages/Authentication/LandingPage'
+import Home from './pages/Home/Home'
+import Login from './pages/Login/Login'
+import Register from './pages/Register/Register'
 
 
 
@@ -10,31 +12,24 @@ import './App.css'
 function App() {
 
   
-  return (
-  <>
-  
-
- 
-      <Routes>
-          
-            <Route exact path = '/' element = {<Landing/>} />
-
-
-           
-          
-
-
-
-
-            
-        
-      </Routes>
+  return ( <
+    div >
     
-
-    
- 
-  </>
-  );
+    <
+    Routes >
+    <
+    Route path = "/"
+    element = { < Home / > }
+    /> <
+    Route path = "/login"
+    element = { < Login / > }
+    /> <
+    Route path = "/register"
+    element = { < Register / > }
+    /> < /
+    Routes > < /
+    div >
+);
 }
 
 export default App;
