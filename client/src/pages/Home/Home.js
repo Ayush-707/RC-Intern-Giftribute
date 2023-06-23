@@ -42,8 +42,8 @@ const Home = () => {
         );
 
         const searchInputStyles = {
-            width: '250px',
-            height: '20px',
+            width: '350px',
+            height: '40px',
         };
 
         return ( <
@@ -129,7 +129,7 @@ div className = "submenu" >
     a href = "#" > Contact Us < /a> <
 a href = "#" > FAQ < /a> <
 a href = "#" > Shipping Information < /a> < /
-    div >
+div >
 )
 } <
 /li> <
@@ -156,7 +156,7 @@ li >
     button className = "cart-button" >
     Cart({ cart.length }) <
     /button> < /
-    li > <
+li > <
     li >
     <
     button
@@ -178,7 +178,7 @@ activeSubMenu === 'profile' && ( <
 /li> < /
 ul > <
     /div> < /
-    nav > <
+nav > <
     /header> <
 div className = "product-list" > {
         filteredProducts.map((product) => ( <
@@ -199,7 +199,7 @@ div className = "product-list" > {
         ))
     } <
     /div> < /
-    div >
+div >
 );
 };
 

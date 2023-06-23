@@ -30,10 +30,13 @@ label {
 
 input {
     margin: 0.5rem 0;
-    padding: 1rem;
+    padding: 1.5rem;
+    /* Increased padding */
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
+    height: 3rem;
+    /* Increased height */
 }
 
 button[type="submit"] {
