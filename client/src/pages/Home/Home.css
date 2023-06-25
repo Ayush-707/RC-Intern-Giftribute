@@ -30,6 +30,11 @@ body {
     padding: 20px;
 }
 
+.container {
+    background: linear-gradient(135deg, #e34848, #ffcd3f, #6db742, #4896e3);
+    height: 17vh;
+}
+
 
 /* Header */
 

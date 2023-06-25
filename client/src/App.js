@@ -3,6 +3,8 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import MyAccount from './pages/MyAccount/MyAccount'
 import MyOrders from './pages/MyOrders/MyOrders'
+import AdminLogin from './pages/AdminLogin/AdminLogin'
+import AdminHome from './pages/AdminHome/AdminHome'
 
 
 
@@ -33,7 +35,13 @@ function App() {
         /> <
         Route path = "/my-orders"
         element = { < MyOrders / > }
-        /> < /
+        /> < 
+        Route path = "/admin-login"
+        element = { < AdminLogin / > }
+        /> <
+        Route path = "/admin-home"
+        element = { < AdminHome / > }
+        /> </
         Routes > < /
         div >
     );

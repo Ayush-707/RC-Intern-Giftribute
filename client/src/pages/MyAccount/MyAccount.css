@@ -11,6 +11,12 @@
     margin: 0 auto;
 }
 
+.my-account-screen {
+    background-image: linear-gradient(#a0d1e9, #9bf8e5, #95a3f2);
+    height: 100vh;
+    padding-top: 30px;
+}
+
 h2 {
     margin-bottom: 1.5rem;
     color: #333;

@@ -66,3 +66,7 @@ button[type="submit"]:hover {
 .link-btn:hover {
     color: #6c33cf;
 }
+
+.button-group {
+    margin-top: 10px;
+}

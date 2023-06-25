@@ -54,11 +54,21 @@ const Login = (props) => {
         <
         button type = "submit" > Log In < /button> < /
         form > <
+        div className = "button-group" >
+        <
         Link to = "/register"
         className = "link-btn" >
         Don 't have an account? Register here. < /
         Link > <
-        /div>
+        /div> <
+        div className = "button-group" >
+        <
+        Link to = "/admin-login" >
+        <
+        button > Login as Admin < /button> < /
+        Link > <
+        /div> < /
+        div >
     );
 };
 
