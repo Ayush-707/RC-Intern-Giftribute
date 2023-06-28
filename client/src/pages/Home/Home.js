@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Home.css';
 
+
 const Home = () => {
+        const navigate = useNavigate();
+
+        const handleCartButtonClick = () => {
+            navigate('/my-cart');
+        };
         const [products, setProducts] = useState([{
                 id: 1,
                 name: 'Product 1',
@@ -153,7 +159,8 @@ activeSubMenu === 'followUs' && ( <
 /li> <
 li >
     <
-    button className = "cart-button" >
+    button className = "cart-button"
+onClick = { handleCartButtonClick } >
     Cart({ cart.length }) <
     /button> < /
 li > <

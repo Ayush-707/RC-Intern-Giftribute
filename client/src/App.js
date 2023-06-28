@@ -5,6 +5,7 @@ import MyAccount from './pages/MyAccount/MyAccount'
 import MyOrders from './pages/MyOrders/MyOrders'
 import AdminLogin from './pages/AdminLogin/AdminLogin'
 import AdminHome from './pages/AdminHome/AdminHome'
+import MyCart from './pages/MyCart/MyCart'
 
 
 
@@ -41,6 +42,9 @@ function App() {
         /> <
         Route path = "/admin-home"
         element = { < AdminHome / > }
+        /> <
+        Route path = "/my-cart"
+        element = { < MyCart / > }
         /> </
         Routes > < /
         div >

@@ -201,9 +201,14 @@ body {
 
 .product {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product img {
