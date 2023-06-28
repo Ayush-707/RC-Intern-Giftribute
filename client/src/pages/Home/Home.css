@@ -30,8 +30,14 @@ body {
     padding: 20px;
 }
 
-.container {
+
+/* .container {
     background: linear-gradient(135deg, #e34848, #ffcd3f, #6db742, #4896e3);
+    height: 17vh;
+} */
+
+.container {
+    background: linear-gradient(135deg, #7d8035, #7d8035);
     height: 17vh;
 }
 
