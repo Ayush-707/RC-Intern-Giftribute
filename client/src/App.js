@@ -2,14 +2,15 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
-import Home from './pages/Home/Home';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
-import MyAccount from './pages/MyAccount/MyAccount';
-import MyOrders from './pages/MyOrders/MyOrders';
-import AdminLogin from './pages/AdminLogin/AdminLogin';
-import AdminHome from './pages/AdminHome/AdminHome';
-import MyCart from './pages/MyCart/MyCart';
+import Home from './pages/User/Home/Home';
+import Login from './pages/User/Login';
+import Register from './pages/User/Register';
+import MyAccount from './pages/User/MyAccount';
+import MyOrders from './pages/User/MyOrders/MyOrders';
+import AdminLogin from './pages/Admin/AdminLogin/AdminLogin';
+import AdminHome from './pages/Admin/AdminHome/AdminHome';
+import MyCart from './pages/User/MyCart/MyCart';
+import ContactUS from './pages/User/ContactUs'
 
 function App() {
   return (

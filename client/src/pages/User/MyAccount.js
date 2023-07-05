@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import { myProfile } from '../../Services/APIs/UserAPI';
-import toast, { Toaster } from 'react-hot-toast';
-import { useNavigate, Link } from 'react-router-dom';
 
 
 export default function MyProfile() {
