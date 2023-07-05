@@ -85,7 +85,7 @@ const ContactForm = () => {
         backgroundSize: 'cover',
         
       }}>
-     <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Contact US</h1>
+     <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white mt-[5%]">Contact US</h1>
       <div className="w-1/2">
         <label htmlFor="name" className="block text-gray-700 font-bold mb-2 mx-1">
           Name

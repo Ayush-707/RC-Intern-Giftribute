@@ -58,16 +58,17 @@ export default function UserSignup() {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    height: '100vh',
+    height: '100%',
+    overflow: 'hidden'
   };
 
   return (
     <div style={styles}>
       <Toaster />
-      <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-        <div className="w-full p-6 m-auto bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
+      <div className="flex flex-col justify-center min-h-screen">
+        <div className="w-full p-6 m-auto mt-10 bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-700">SIGN UP</h1>
-          <form className="mt-6" onSubmit={handleSubmit}>
+          <form className="p-3" onSubmit={handleSubmit}>
             <div className="mb-2">
               <label htmlFor="name" className="block text-sm font-semibold text-gray-800">
                 Name

@@ -67,7 +67,7 @@ export default function MyProfile() {
         <div className="relative px-4 py-10 border-2 bg-blue-100 mx-8 md:mx-0 shadow rounded-3xl sm:p-10 border-blue-600">
           <div className="max-w-md mx-auto">
             <div className="flex items-center space-x-5">
-              <div className="h-14 w-14 border-black border bg-purple-400 rounded-full flex flex-shrink-0 justify-center items-center text-2xl font-mono text-black">
+              <div className="h-16 w-16 border-black border bg-purple-400 rounded-full flex flex-shrink-0 justify-center items-center text-2xl font-mono text-black">
                 <i class="fa-solid fa-user-large"></i>
               </div>
               <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
