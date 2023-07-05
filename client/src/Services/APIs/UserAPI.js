@@ -2,9 +2,18 @@ import { commonrequest }  from "../APIcall";
 import { BACKEND_URL } from "../helper";
 
 
-export const Login = async(data) => {
-    return await commonrequest("POST", `${BACKEND_URL}/User/Login`, data)
+export const LoginAPI = async(data) => {
+    return await commonrequest("POST", `${BACKEND_URL}/user/login`, data)
 }
+
+export const RegisterAPI = async(data) => {
+    return await commonrequest("POST", `${BACKEND_URL}/user/register`, data)
+}
+
+export const myProfile = async (email) => {
+    return await commonrequest("GET", `${BACKEND_URL}/user/profile?email=${email}`);
+  };
+  
 
 
 // export const RequestNewAccount = async(data) => {

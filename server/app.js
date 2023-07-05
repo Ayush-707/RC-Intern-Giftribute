@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 require("./Database/Connection");
 const bodyParser = require('body-parser');
+const router = require("./Routes/UserRoutes")
 
 
 const PORT = 4002;
@@ -20,6 +21,8 @@ var options = {
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors(options));
+app.use('/api',router)
+app.use(router)
 
 
 
