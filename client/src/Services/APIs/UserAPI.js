@@ -17,6 +17,10 @@ export const myProfile = async (email) => {
   export const CustCare = async(data) => {
     return await commonrequest("POST", `${BACKEND_URL}/user/contact`, data)
 }
+
+export const myFlowers = async(data) => {
+    return await commonrequest("GET", `${BACKEND_URL}/user/gifts/flowers`, data)
+}
   
 
 

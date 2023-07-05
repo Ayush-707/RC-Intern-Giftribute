@@ -11,6 +11,7 @@ import AdminLogin from './pages/Admin/AdminLogin/AdminLogin';
 import AdminHome from './pages/Admin/AdminHome/AdminHome';
 import MyCart from './pages/User/MyCart/MyCart';
 import ContactUS from './pages/User/ContactUs'
+import Flowers from './pages/User/Gifts/Flowers'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/admin-home" element={<AdminHome />} />
         <Route path="/my-cart" element={<MyCart />} />
         <Route path="/user/contact-us" element={<ContactUS />} />
+        <Route path="/flowers" element={<Flowers />} />
       </Routes>
     </div>
   );

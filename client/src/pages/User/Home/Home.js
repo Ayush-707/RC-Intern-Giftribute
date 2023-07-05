@@ -92,7 +92,7 @@ const Home = () => {
                 <
                 Link to = "/flowers" > Flowers < /Link>{" "} <
                 Link to = "/cakes" > Cakes < /Link>{" "} <
-                Link to = "/gifts" > Gifts < /Link>{" "} <
+                Link to = "/combos" > Hampers < /Link>{" "} <
                 Link to = "/plants" > Plants < /Link>{" "} <
                 /div>
             )
