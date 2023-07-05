@@ -1,64 +1,59 @@
-import React, {useState, useEffect} from 'react';
-import { myProfile } from '../../Services/APIs/UserAPI';
+import React, { useState, useEffect } from "react";
+import { myProfile } from "../../Services/APIs/UserAPI";
 
+const styles = {
+  backgroundImage: "url(/profile.jpeg)",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  height: "100vh",
+  mainToolbar: {
+    margin: "0 auto",
+    maxWidth: "1605px",
+    width: "100%",
+    position: "relative",
+    padding: "5px 35px",
+    height: "79px",
+    backgroundColor: "#7d8035",
+  },
+};
 
 export default function MyProfile() {
-
-  const styles = {
-    backgroundImage: 'url(/profile.jpeg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: '100vh',
-  };
-
   const [userData, setUserData] = useState({
     userAddress: "",
     userName: "",
     userEmail: "",
-    userPhoneNumber: ""
+    userPhoneNumber: "",
   });
-  
 
   const [email, setEmail] = useState("");
 
-        useEffect(() => {
-        const userMail = localStorage.getItem('userMail');
-        //console.log(userMail);
-        if (userMail) {
-        setEmail(userMail);
-        }
-      }, []);
+  useEffect(() => {
+    const userMail = localStorage.getItem("userMail");
+    if (userMail) {
+      setEmail(userMail);
+    }
+  }, []);
 
+  const getUserData = async () => {
+    var response = await myProfile(email);
+    console.log(response.data);
 
+    if (response.data) {
+      setUserData((prevUserData) => ({
+        ...prevUserData,
+        userName: response.data.userName || prevUserData.userName,
+        userAddress: response.data.userAddress || prevUserData.userAddress,
+        userPhoneNumber:
+          response.data.userPhoneNumber || prevUserData.userPhoneNumber,
+        userEmail: response.data.userEmail || prevUserData.userEmail,
+      }));
+    }
+  };
 
-      const getUserData = async() => {
-       
-      var response = await myProfile(email)
-      console.log(response.data)
-      
-      if (response.data) {
-        setUserData((prevUserData) => ({
-          ...prevUserData,
-          userName: response.data.userName || prevUserData.userName,
-          userAddress: response.data.userAddress || prevUserData.userAddress,
-          userPhoneNumber: response.data.userPhoneNumber || prevUserData.userPhoneNumber,
-          userEmail: response.data.userEmail || prevUserData.userEmail
-        }));
-      }
-      
-      
-      
-
-      
-
-      };
-
-        useEffect(() => {
-          getUserData()
-        }, [email])
-
-  
+  useEffect(() => {
+    getUserData();
+  }, [email]);
 
   return (
     <div style = {styles} >
