@@ -13,6 +13,10 @@ export const RegisterAPI = async(data) => {
 export const myProfile = async (email) => {
     return await commonrequest("GET", `${BACKEND_URL}/user/profile?email=${email}`);
   };
+
+  export const CustCare = async(data) => {
+    return await commonrequest("POST", `${BACKEND_URL}/user/contact`, data)
+}
   
 
 

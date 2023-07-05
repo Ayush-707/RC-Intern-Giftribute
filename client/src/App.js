@@ -24,6 +24,7 @@ function App() {
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-home" element={<AdminHome />} />
         <Route path="/my-cart" element={<MyCart />} />
+        <Route path="/user/contact-us" element={<ContactUS />} />
       </Routes>
     </div>
   );

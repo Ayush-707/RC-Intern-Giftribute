@@ -128,7 +128,7 @@ const Home = () => {
             activeSubMenu === "support" && ( <
                 div className = "submenu" >
                 <
-                a href = "#" > Contact Us < /a> <a href="#"> FAQ </a > { " " } <
+                a href = "/user/contact-us" > Contact Us < /a> <a href="#"> FAQ </a > { " " } <
                 a href = "#" > Shipping Information < /a>{" "} <
                 /div>
             )
