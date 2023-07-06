@@ -44,7 +44,7 @@ const Header = () => {
           <img src="/logo.jpeg" alt="Logo" className="h-12 w-auto mr-2" />
           <h1 className="text-3xl text-white font-extrabold -mb-[2%]">Giftribute</h1>
         </div>
-        <nav className="space-x-4">
+        <nav className="space-x-4 font-semibold">
           <a className="text-white hover:underline text-lg" href="/">
             Home
           </a>
@@ -88,12 +88,16 @@ const Header = () => {
                </div>
              )}
            </div>
+           <a className="text-white hover:underline text-lg" href="/user/contact-us">
+            Contact US
+          </a>
           <div className="relative inline-block">
             <a
               className={`text-white hover:underline text-lg cursor-pointer ${
                 menuStates.isProfileMenuOpen ? 'underline' : ''
               }`}
               href="#"
+              title = "Profile"
               onClick={() => toggleMenu('isProfileMenuOpen')}
             >
               <i className="fa-solid fa-user-large"></i>
@@ -108,7 +112,7 @@ const Header = () => {
               </div>
             )}
           </div>
-          <a className="text-white text-2xl px-1" href="/" title="Cart">
+          <a className="text-white text-2xl px-1" href="/my-cart" title="Cart">
             <i className="fa-solid fa-cart-shopping"></i>
           </a>
         </nav>
