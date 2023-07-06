@@ -53,7 +53,7 @@ exports.userProfile = async (req, res) => {
 exports.userSignup = async (req, res) => {
   try {
     const { userName, userEmail, userPassword, userAddress, userPhoneNumber } = req.body;
-    console.log('godspeed')
+    //console.log('godspeed')
 
     // Check if a user with the provided email already exists
     const existingUser = await myUser.findOne({ userEmail });

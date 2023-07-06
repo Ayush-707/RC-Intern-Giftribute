@@ -112,7 +112,7 @@ exports.userGetCart = async (req, res) => {
     const cart = await Cart.findOne({ userEmail: userEmail }).populate('items.productId');
 
     if (cart) {
-      res.status(200).json({ success: true, data: cart.items });
+      res.status(200).json( cart.items );
     } else {
       res.status(404).json({ success: false, message: 'Cart not found' });
     }
