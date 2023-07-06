@@ -21,6 +21,14 @@ export const myProfile = async (email) => {
 export const myFlowers = async(data) => {
     return await commonrequest("GET", `${BACKEND_URL}/user/gifts/flowers`, data)
 }
+
+export const myGifts = async(data) => {
+    return await commonrequest("GET", `${BACKEND_URL}/user/home/gifts`, data)
+}
+
+export const addToCart = async(data) => {
+    return await commonrequest("POST", `${BACKEND_URL}/user/cart`, data)
+}
   
 
 

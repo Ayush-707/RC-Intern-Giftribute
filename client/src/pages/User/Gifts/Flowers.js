@@ -20,6 +20,21 @@ const FlowerCard = ({ flower }) => {
 const FlowerShop = () => {
   const [flowers, setFlowers] = useState([]);
 
+  useEffect(() => {
+    // Apply styles to the body element
+    Object.assign(document.body.style, {
+      backgroundImage: 'url(/form1.avif)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      minHeight: '100vh',
+      overflowY: 'auto'
+     
+      
+    });
+  }, []);
+
   const getData = async () => {
     try {
       const res = await myFlowers();
@@ -33,17 +48,17 @@ const FlowerShop = () => {
     getData();
   }, []);
 
-  const styles = {
-    backgroundImage: 'url(/flower-bg.avif)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: '100vh',
-    overflowY: 'auto',
-  };
+  // const styles = {
+  //   backgroundImage: 'url(/flower-bg.avif)',
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center',
+  //   backgroundRepeat: 'no-repeat',
+  //   height: '100vh',
+  //   overflowY: 'auto',
+  // };
 
   return (
-    <div style={styles}>
+    <div >
       <div className="py-12 p-4" style={{ maxWidth: '70vw', margin: '0 auto', height: '100%' }}>
         <div className='text-center'><h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-orange-500 rounded-lg p-1">
           &nbsp;Gift <mark className="px-2 text-yellow-200 bg-blue-600 rounded dark:bg-blue-500">Flowers</mark> to Your Loved Ones

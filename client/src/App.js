@@ -13,11 +13,19 @@ import MyCart from "./pages/User/MyCart/MyCart";
 import ContactUS from "./pages/User/ContactUs";
 import Flowers from "./pages/User/Gifts/Flowers";
 import Navbar from "./Component/Navbar";
+import SearchBar from './Component/Search';
+
 
 function App() {
   return (
     <div>
       <Navbar />
+      <div className="flex justify-end">
+        <div className="w-1/3 p-1">
+          <SearchBar />
+        </div>
+        
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />{" "}
         <Route path="/login" element={<Login />} />{" "}

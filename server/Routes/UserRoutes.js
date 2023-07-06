@@ -17,4 +17,8 @@ router.post("/user/contact", userMisc.userCare);
 
 router.get("/user/gifts/flowers", myGifts.getAllFlowers);
 
+router.get("/user/home/gifts", myGifts.getAllGifts);
+
+router.post("/user/cart", userMisc.userCart)
+
 module.exports = router;

@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { myProfile } from "../../Services/APIs/UserAPI";
 
-const styles = {
-  backgroundImage: "url(/profile.jpeg)",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  height: "100vh",
-  mainToolbar: {
-    margin: "0 auto",
-    maxWidth: "1605px",
-    width: "100%",
-    position: "relative",
-    padding: "5px 35px",
-    height: "79px",
-    backgroundColor: "#7d8035",
-  },
-};
+// const styles = {
+//   backgroundImage: "url(/profile.jpeg)",
+//   backgroundSize: "cover",
+//   backgroundPosition: "center",
+//   backgroundRepeat: "no-repeat",
+//   height: "100vh",
+//   mainToolbar: {
+//     margin: "0 auto",
+//     maxWidth: "1605px",
+//     width: "100%",
+//     position: "relative",
+//     padding: "5px 35px",
+//     height: "79px",
+//     backgroundColor: "#7d8035",
+//   },
+// };
+
 
 export default function MyProfile() {
   const [userData, setUserData] = useState({
@@ -33,6 +34,20 @@ export default function MyProfile() {
     if (userMail) {
       setEmail(userMail);
     }
+  }, []);
+  useEffect(() => {
+    // Apply styles to the body element
+    Object.assign(document.body.style, {
+      backgroundImage: 'url(/form1.avif)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      minHeight: '100vh',
+      overflowY: 'auto'
+     
+      
+    });
   }, []);
 
   const getUserData = async () => {
@@ -56,8 +71,8 @@ export default function MyProfile() {
   }, [email]);
 
   return (
-    <div style = {styles} >
-    <div className="min-h-screen py-6 flex flex-col justify-center sm:py-12">
+    <div  >
+    <div className="py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="relative px-4 py-10 border-2 bg-blue-100 mx-8 md:mx-0 shadow rounded-3xl sm:p-10 border-blue-600">
           <div className="max-w-md mx-auto">

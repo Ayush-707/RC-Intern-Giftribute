@@ -76,13 +76,17 @@ const ContactForm = () => {
       <div className="flex flex-row w-full">
         <div className="w-1/2 pr-6">
           <div className="w-full">
-            <img src={process.env.PUBLIC_URL + '/support.avif'} alt="" className="w-full" />
+            <img src={process.env.PUBLIC_URL + '/support.avif'} 
+                alt="" 
+                className="w-full"
+                style = {{zIndex: '-1'}} />
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 ">
         <form onSubmit={handleSubmit} className="flex flex-col items-center h-screen" style={{ 
         backgroundImage: `url(${process.env.PUBLIC_URL}/form1.avif)`,
         backgroundSize: 'cover',
+        zIndex: '-1'
         
       }}>
      <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white mt-[5%]">Contact US</h1>

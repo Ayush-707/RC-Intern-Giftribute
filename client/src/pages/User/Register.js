@@ -141,7 +141,7 @@
 //     </div>
 //   );
 // }
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RegisterAPI } from "../../Services/APIs/UserAPI";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -201,19 +201,33 @@ export default function UserSignup() {
     console.log(res.data);
   };
 
-  const styles = {
-    backgroundImage: 'url(/orange.avif)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: '100%',
-    overflow: 'hidden'
-  };
+  // const styles = {
+  //   backgroundImage: 'url(/orange.avif)',
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center',
+  //   backgroundRepeat: 'no-repeat',
+  //   height: '100%',
+  //   overflow: 'hidden'
+  // };
+  useEffect(() => {
+    // Apply styles to the body element
+    Object.assign(document.body.style, {
+      backgroundImage: 'url(/orange.avif)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      minHeight: '100vh',
+      overflowY: 'auto'
+     
+      
+    });
+  }, []);
 
   return (
-    <div style={styles}>
+    <div >
       <Toaster />
-      <div className="flex flex-col justify-center min-h-screen">
+      <div className="flex flex-col justify-center min-h-screen pb-4">
         <div className="w-full p-6 m-auto mt-10 bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-700">SIGN UP</h1>
           <form className="p-3" onSubmit={handleSubmit}>

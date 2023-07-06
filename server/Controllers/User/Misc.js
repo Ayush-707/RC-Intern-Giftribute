@@ -49,4 +49,13 @@ exports.userCare = async (req, res) => {
       res.status(400).send('Server Error');
     }
   };
+
+
+exports.userCart = async (req, res) => {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
   
