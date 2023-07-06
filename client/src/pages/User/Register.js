@@ -202,56 +202,21 @@ export default function UserSignup() {
   };
 
   const styles = {
-    backgroundImage: "url(/orange.avif)",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    height: "100vh",
-    mainToolbar: {
-      margin: "0 auto",
-      maxWidth: "1605px",
-      width: "100%",
-      position: "relative",
-      padding: "5px 35px",
-      height: "79px",
-      backgroundColor: "#7d8035",
-      display: "flex",
-      justifyContent: "flex-start",
-      alignItems: "center",
-    },
-    homeButton: {
-      color: "white",
-      marginRight: "10px",
-      backgroundColor: "transparent",
-      border: "none",
-      padding: "0",
-      fontSize: "40px",
-    },
+    backgroundImage: 'url(/orange.avif)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '100%',
+    overflow: 'hidden'
   };
 
   return (
     <div style={styles}>
       <Toaster />
-      <div
-        className="main-toolbar_main-toolbar__13RrL"
-        style={styles.mainToolbar}
-      >
-        <button
-          onClick={() => {
-            window.location.href = "/";
-          }}
-          style={styles.homeButton}
-        >
-          Home{" "}
-        </button>{" "}
-      </div>{" "}
-      <div className="relative flex flex-col justify-center h-600 overflow-hidden">
-        <div className="w-full p-6 m-auto bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
-          <h1 className="text-3xl font-semibold text-center text-blue-700">
-            {" "}
-            SIGN UP{" "}
-          </h1>{" "}
-          <form className="mt-6" onSubmit={handleSubmit}>
+      <div className="flex flex-col justify-center min-h-screen">
+        <div className="w-full p-6 m-auto mt-10 bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
+          <h1 className="text-3xl font-semibold text-center text-blue-700">SIGN UP</h1>
+          <form className="p-3" onSubmit={handleSubmit}>
             <div className="mb-2">
               <label
                 htmlFor="name"

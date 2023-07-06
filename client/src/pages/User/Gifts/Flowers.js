@@ -9,7 +9,7 @@ const FlowerCard = ({ flower }) => {
         <h2 className="text-gray-900 font-semibold text-lg">{flower.name}</h2>
         <p className="mt-2 text-gray-600">{flower.description}</p>
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-gray-900 font-bold">${flower.price}</span>
+          <span className="text-gray-900 font-bold">₹ {flower.price}</span>
           <button className="px-3 py-1 bg-indigo-600 text-white font-semibold rounded">Add to Cart</button>
         </div>
       </div>
@@ -44,10 +44,10 @@ const FlowerShop = () => {
 
   return (
     <div style={styles}>
-      <div className="py-12 justify-center p-4" style={{ maxWidth: '70vw', margin: '0 auto', height: '100%' }}>
-        <h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-orange-500 rounded-lg p-1">
+      <div className="py-12 p-4" style={{ maxWidth: '70vw', margin: '0 auto', height: '100%' }}>
+        <div className='text-center'><h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-orange-500 rounded-lg p-1">
           &nbsp;Gift <mark className="px-2 text-yellow-200 bg-blue-600 rounded dark:bg-blue-500">Flowers</mark> to Your Loved Ones
-        </h1>
+        </h1></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {flowers.map((flower, index) => (
             <FlowerCard key={index} flower={flower} />

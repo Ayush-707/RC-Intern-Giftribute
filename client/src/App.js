@@ -12,10 +12,12 @@ import AdminHome from "./pages/Admin/AdminHome/AdminHome";
 import MyCart from "./pages/User/MyCart/MyCart";
 import ContactUS from "./pages/User/ContactUs";
 import Flowers from "./pages/User/Gifts/Flowers";
+import Navbar from "./Component/Navbar";
 
 function App() {
   return (
     <div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />{" "}
         <Route path="/login" element={<Login />} />{" "}
