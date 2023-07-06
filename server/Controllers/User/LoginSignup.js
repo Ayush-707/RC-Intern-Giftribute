@@ -53,16 +53,17 @@ exports.userProfile = async (req, res) => {
 exports.userSignup = async (req, res) => {
   try {
     const { userName, userEmail, userPassword, userAddress, userPhoneNumber } = req.body;
+    console.log('godspeed')
 
     // Check if a user with the provided email already exists
     const existingUser = await myUser.findOne({ userEmail });
 
     if (existingUser) {
-      return res.status(400).json({ error: "Email already exists" });
+      return res.status(201).json({ error: "Email already exists" });
     }
 
     if (userPassword.length < 6) {
-      return res.status(400).json({ error: "Password should be at least 6 characters long" });
+      return res.status(202).json({ error: "Password should be at least 6 characters long" });
     }
 
     // Create a new user
@@ -80,7 +81,7 @@ exports.userSignup = async (req, res) => {
     res.status(200).json({ message: "Signup successful" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Server error" });
+    res.status(400).json({ error: "Server error" });
   }
 };
 

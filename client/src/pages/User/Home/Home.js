@@ -6,8 +6,8 @@ const cartAdd = async(id) => {
   //console.log(id)
   const userMail = localStorage.getItem("userMail");
   const obj = {
-    id: id,
-    email: userMail
+    giftId: id,
+    userEmail: userMail
   }
   const res = await addToCart(obj)
 }

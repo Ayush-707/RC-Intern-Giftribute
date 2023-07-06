@@ -19,6 +19,9 @@ router.get("/user/gifts/flowers", myGifts.getAllFlowers);
 
 router.get("/user/home/gifts", myGifts.getAllGifts);
 
-router.post("/user/cart", userMisc.userCart)
+router.post("/user/cart", userMisc.userAddToCart)
+
+router.get("/user/get-cart", userMisc.userGetCart)
+
 
 module.exports = router;

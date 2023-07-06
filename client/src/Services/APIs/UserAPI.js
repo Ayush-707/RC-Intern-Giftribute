@@ -29,6 +29,10 @@ export const myGifts = async(data) => {
 export const addToCart = async(data) => {
     return await commonrequest("POST", `${BACKEND_URL}/user/cart`, data)
 }
+
+export const getCartItems = async(email) => {
+    return await commonrequest("GET", `${BACKEND_URL}/user/get-cart?email=${email}`)
+}
   
 
 

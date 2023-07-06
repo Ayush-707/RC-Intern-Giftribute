@@ -1,61 +1,42 @@
-import React from "react";
-import "./MyCart.css";
+import React, { useEffect, useState } from 'react';
+import { getCartItems } from '../../../Services/APIs/UserAPI'; // Assuming you have an API function to fetch cart items
 
-const MyCartPage = () => {
-  const products = [
-    {
-      name: "Sunflower",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd56dx7u2eV_mcG1C0CffY_VIfNqIuCYdKi0_0s8_U2CUwIljv7r-CewMnNe_1DRfIYzk&usqp=CAU",
-      description: "Bright and cheery sunflower to brighten your day.",
-      price: 7.99,
-    },
-    {
-      name: "Sunflower",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd56dx7u2eV_mcG1C0CffY_VIfNqIuCYdKi0_0s8_U2CUwIljv7r-CewMnNe_1DRfIYzk&usqp=CAU",
-      description: "Bright and cheery sunflower to brighten your day.",
-      price: 7.99,
-    },
-    {
-      name: "Sunflower",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd56dx7u2eV_mcG1C0CffY_VIfNqIuCYdKi0_0s8_U2CUwIljv7r-CewMnNe_1DRfIYzk&usqp=CAU",
-      description: "Bright and cheery sunflower to brighten your day.",
-      price: 7.99,
-    },
-    {
-      name: "Sunflower",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd56dx7u2eV_mcG1C0CffY_VIfNqIuCYdKi0_0s8_U2CUwIljv7r-CewMnNe_1DRfIYzk&usqp=CAU",
-      description: "Bright and cheery sunflower to brighten your day.",
-      price: 7.99,
-    },
-    // Add more product objects as needed
-  ];
+const CartPage = () => {
+  const [cartItems, setCartItems] = useState([""]);
+
+  const fetchCartItems = async () => {
+    try {
+      const email = localStorage.getItem('userMail')
+      const response = await getCartItems(email); // Fetch cart items from the backend API
+      console.log(response.data)
+      setCartItems(response.data.productId); // Set the fetched cart items to the state
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCartItems();
+  }, []);
 
   return (
-    <div className="my-cart-page">
-      <h1> Your Cart </h1>{" "}
-      <div className="my-cart-container">
-        {" "}
-        {products.map((product, index) => (
-          <div className="my-product" key={index}>
-            <img src={product.image} alt={product.name} />{" "}
-            <div className="my-product-details">
-              <h3> {product.name} </h3>{" "}
-              <p className="my-product-description"> {product.description} </p>{" "}
-              <p className="my-product-price"> $ {product.price} </p>{" "}
-              <div className="my-actions">
-                <button className="buy-now"> Buy Now </button>{" "}
-                <button className="remove-from-cart"> Remove from Cart </button>{" "}
-              </div>{" "}
-            </div>{" "}
-          </div>
-        ))}{" "}
-      </div>{" "}
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">My Cart</h1>
+      {cartItems.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <div>
+          {cartItems.map((item) => (
+            <div key={item.productId} className="border border-gray-300 p-4 mb-4">
+              <h2 className="text-lg font-semibold">{item.productName}</h2>
+              <p>Price: ₹ {item.price}</p>
+              <p>Quantity: {item.quantity}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
-export default MyCartPage;
+export default CartPage;

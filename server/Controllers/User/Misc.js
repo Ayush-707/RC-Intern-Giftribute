@@ -1,6 +1,9 @@
 const nodemailer = require('nodemailer');
 const emailExistence = require('email-existence');
 
+const Cart = require('../../Database/Models/Cart')
+const User = require('../../Database/Models/UserAccounts')
+
 exports.userCare = async (req, res) => {
 
     try {
@@ -51,11 +54,70 @@ exports.userCare = async (req, res) => {
   };
 
 
-exports.userCart = async (req, res) => {
-  try {
-    
-  } catch (error) {
-    
-  }
-}
   
+ 
+  
+  
+  exports.userAddToCart = async (req, res) => {
+    try {
+      const { giftId, userEmail } = req.body;
+  
+      // Find the user based on the userEmail
+      const user = await User.findOne({ email: userEmail });
+  
+      if (user) {
+        // Find the user cart based on the user ID
+        const userCart = await Cart.findOne({ userEmail: userEmail });
+  
+        if (userCart) {
+          // If the user already has a cart, update the existing cart
+          const existingItemIndex = userCart.items.findIndex(item => item.productId.toString() === giftId);
+          
+          if (existingItemIndex !== -1) {
+            // If the gift already exists in the cart, update its quantity
+            userCart.items[existingItemIndex].quantity += 1;
+          } else {
+            // If the gift does not exist in the cart, add it as a new item
+            userCart.items.push({ productId: giftId });
+          }
+  
+          await userCart.save();
+        } else {
+          // If the user does not have a cart, create a new cart
+          const newCart = new Cart({
+            userEmail: userEmail,
+            items: [{ productId: giftId }]
+          });
+  
+          await newCart.save();
+        }
+  
+        res.status(200).json({ success: true, message: 'Item added to cart successfully' });
+      } else {
+        res.status(404).json({ success: false, message: 'User not found' });
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+  };
+  
+  
+
+exports.userGetCart = async (req, res) => {
+  try {
+    const userEmail = req.query.email;
+
+    // Find the user's cart based on the userEmail
+    const cart = await Cart.findOne({ userEmail: userEmail }).populate('items.productId');
+
+    if (cart) {
+      res.status(200).json({ success: true, data: cart.items });
+    } else {
+      res.status(404).json({ success: false, message: 'Cart not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+};
