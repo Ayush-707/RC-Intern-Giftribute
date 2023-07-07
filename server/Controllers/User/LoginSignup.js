@@ -1,4 +1,6 @@
 const myUser = require("../../Database/Models/UserAccounts");
+const Cart = require("../../Database/Models/Cart")
+const mongoose = require('mongoose');
 
 exports.userLogin = async (req, res) => {
   try {
@@ -77,6 +79,13 @@ exports.userSignup = async (req, res) => {
 
     // Save the user to the database
     await newUser.save();
+
+    //Create an empty cart
+
+    const cart = new Cart({ userEmail: userEmail, items: [] });
+
+    // Save the cart to the database
+    await cart.save();
 
     res.status(200).json({ message: "Signup successful" });
   } catch (error) {

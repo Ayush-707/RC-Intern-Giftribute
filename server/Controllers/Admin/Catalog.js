@@ -1,4 +1,5 @@
 const Gift = require('../../Database/Models/GiftsHome');
+const Cart = require('../../Database/Models/Cart')
 
 exports.addProduct = async (req, res) => {
   try {
@@ -22,13 +23,28 @@ exports.addProduct = async (req, res) => {
   }
 };
 
+
 exports.removeProduct = async (req, res) => {
-    try {
-      
-      console.log(req.body)
-    } catch (error) {
-      console.error(error);
-      res.status(400).json({ success: false, message: 'Failed to remove product' });
+  try {
+    const { id } = req.body;
+    console.log('Gift id is ', id);
+
+    // Remove the gift from the Gift collection
+    const deletedGift = await Gift.findByIdAndDelete(id);
+
+    if (deletedGift) {
+      // Remove the gift from the Cart collection
+      await Cart.updateMany(
+        { 'items.productId': id },
+        { $pull: { 'items': { 'productId': id } } }
+      );
+
+      res.status(200).json({ success: true, message: 'Product removed successfully' });
+    } else {
+      res.status(404).json({ success: false, message: 'Gift not found' });
     }
-  };
-  
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({ success: false, message: 'Failed to remove product' });
+  }
+};

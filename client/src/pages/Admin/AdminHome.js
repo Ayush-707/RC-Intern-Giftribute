@@ -27,7 +27,7 @@ const GiftCard = ({ gift }) => {
           <span className="text-gray-900 font-bold"> ₹{gift.price} </span>{" "}
           <button
             className="px-3 py-1 bg-red-600 text-white font-semibold rounded hover:bg-red-700 active:bg-red-800"
-            onClick={handleRemove}
+            onClick={handleRemoveClick}
           >
             Remove Product{" "}
           </button>{" "}
@@ -93,6 +93,7 @@ const AdminHome = () => {
 
   const handleAddProduct = () => {
     setShowPrompt(true);
+    console.log("pp");
   };
 
   const handlePromptClose = async (action) => {
@@ -109,18 +110,6 @@ const AdminHome = () => {
         getData();
       }
     }
-  };
-
-  const handleAddRemoveFlowers = () => {
-    navigate("/admin-Flower");
-  };
-
-  const handleAddRemovePlants = () => {
-    navigate("/admin-Plant");
-  };
-
-  const handleAddRemoveCakes = () => {
-    navigate("/admin-Cakes");
   };
 
   return (
