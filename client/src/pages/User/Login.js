@@ -117,8 +117,6 @@ export default function UserLogin() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  
-
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -149,33 +147,22 @@ export default function UserLogin() {
     console.log(res.data);
   };
 
-  // const styles = {
-  //   backgroundImage: 'url(/orange.avif)',
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center',
-  //   backgroundRepeat: 'no-repeat',
-  //   maxHeight: '100%',
-  //   overflowY: 'hidden'
-   
-  // };
   useEffect(() => {
     // Apply styles to the body element
     Object.assign(document.body.style, {
-      backgroundImage: 'url(/orange.avif)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed',
-      minHeight: '100vh',
-      overflowY: 'auto'
-     
-      
+      backgroundImage: "url(/orange.avif)",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundAttachment: "fixed",
+      minHeight: "100vh",
+      overflowY: "auto",
     });
   }, []);
 
   return (
-    <div >
-      <Toaster/>
+    <div>
+      <Toaster />
       <div className=" flex flex-col justify-center mt-7">
         <div className="w-full p-6 m-auto bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-700">
