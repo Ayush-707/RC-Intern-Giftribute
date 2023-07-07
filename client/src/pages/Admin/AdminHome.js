@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { myGifts } from "../../Services/APIs/UserAPI";
 import { useNavigate } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import FormDialog from "./FormDialog";
+import { myGifts } from "../../Services/APIs/UserAPI";
 import { addProduct, removeProduct } from "../../Services/APIs/AdminAPI";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -27,7 +27,7 @@ const GiftCard = ({ gift }) => {
           <span className="text-gray-900 font-bold"> ₹{gift.price} </span>{" "}
           <button
             className="px-3 py-1 bg-red-600 text-white font-semibold rounded hover:bg-red-700 active:bg-red-800"
-            onClick={handleRemoveClick}
+            onClick={handleRemove}
           >
             Remove Product{" "}
           </button>{" "}
@@ -110,6 +110,18 @@ const AdminHome = () => {
         getData();
       }
     }
+  };
+
+  const handleAddRemoveFlowers = () => {
+    navigate("/admin-Flower");
+  };
+
+  const handleAddRemovePlants = () => {
+    navigate("/admin-Plant");
+  };
+
+  const handleAddRemoveCakes = () => {
+    navigate("/admin-Cakes");
   };
 
   return (
