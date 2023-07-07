@@ -12,6 +12,8 @@ import AdminHome from "./pages/Admin/AdminHome/AdminHome";
 import MyCart from "./pages/User/MyCart/MyCart";
 import ContactUS from "./pages/User/ContactUs";
 import Flowers from "./pages/User/Gifts/Flowers";
+import Plants from "./pages/User/Gifts/Plants";
+import Cakes from './pages/User/Gifts/Cakes'
 import Navbar from "./Component/Navbar";
 import SearchBar from './Component/Search';
 
@@ -27,17 +29,20 @@ function App() {
         
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />{" "}
-        <Route path="/login" element={<Login />} />{" "}
-        <Route path="/register" element={<Register />} />{" "}
-        <Route path="/my-account" element={<MyAccount />} />{" "}
-        <Route path="/my-orders" element={<MyOrders />} />{" "}
-        <Route path="/admin-login" element={<AdminLogin />} />{" "}
-        <Route path="/admin-home" element={<AdminHome />} />{" "}
-        <Route path="/my-cart" element={<MyCart />} />{" "}
-        <Route path="/user/contact-us" element={<ContactUS />} />{" "}
-        <Route path="/flowers" element={<Flowers />} />{" "}
-      </Routes>{" "}
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/my-account" element={<MyAccount />} />
+        <Route path="/my-orders" element={<MyOrders />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-home" element={<AdminHome />} />
+        <Route path="/my-cart" element={<MyCart />} />
+        <Route path="/user/contact-us" element={<ContactUS />} />
+        <Route path="/flowers" element={<Flowers />} />
+        <Route path="/plants" element={<Plants />} />
+        <Route path="/cakes" element={<Cakes />} />
+
+      </Routes>
     </div>
   );
 }

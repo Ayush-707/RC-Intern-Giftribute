@@ -22,6 +22,14 @@ export const myFlowers = async(data) => {
     return await commonrequest("GET", `${BACKEND_URL}/user/gifts/flowers`, data)
 }
 
+export const myPlants = async(data) => {
+    return await commonrequest("GET", `${BACKEND_URL}/user/gifts/plants`, data)
+}
+
+export const myCakes = async(data) => {
+    return await commonrequest("GET", `${BACKEND_URL}/user/gifts/cakes`, data)
+}
+
 export const myGifts = async(data) => {
     return await commonrequest("GET", `${BACKEND_URL}/user/home/gifts`, data)
 }
@@ -32,6 +40,10 @@ export const addToCart = async(data) => {
 
 export const getCartItems = async(email) => {
     return await commonrequest("GET", `${BACKEND_URL}/user/get-cart?email=${email}`)
+}
+
+export const cartRemove = async(data) => {
+    return await commonrequest("DELETE", `${BACKEND_URL}/user/remove-item`, data)
 }
   
 

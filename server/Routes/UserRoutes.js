@@ -17,11 +17,17 @@ router.post("/user/contact", userMisc.userCare);
 
 router.get("/user/gifts/flowers", myGifts.getAllFlowers);
 
+router.get("/user/gifts/plants", myGifts.getAllPlants);
+
+router.get("/user/gifts/cakes", myGifts.getAllCakes);
+
 router.get("/user/home/gifts", myGifts.getAllGifts);
 
 router.post("/user/cart", userMisc.userAddToCart)
 
 router.get("/user/get-cart", userMisc.userGetCart)
+
+router.delete("/user/remove-item", userMisc.userRemove)
 
 
 module.exports = router;

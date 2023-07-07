@@ -18,7 +18,7 @@ const Header = () => {
     { text: 'Flowers', link: '/flowers' },
     { text: 'Plants', link: '/plants' },
     { text: 'Cakes/Chocolates', link: '/cakes' },
-    { text: 'Others', link: '/other-gifts' },
+    { text: 'Others', link: '/' },
   ];
 
   const followArray = [

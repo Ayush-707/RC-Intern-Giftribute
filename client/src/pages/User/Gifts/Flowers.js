@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { myFlowers } from '../../../Services/APIs/UserAPI';
+import toast, { Toaster } from "react-hot-toast";
 
 const FlowerCard = ({ flower }) => {
   return (
@@ -23,7 +24,7 @@ const FlowerShop = () => {
   useEffect(() => {
     // Apply styles to the body element
     Object.assign(document.body.style, {
-      backgroundImage: 'url(/form1.avif)',
+      backgroundImage: 'url(/flower-bg.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -38,7 +39,11 @@ const FlowerShop = () => {
   const getData = async () => {
     try {
       const res = await myFlowers();
-      setFlowers(res.data);
+      if (res.status !== 200) {
+        toast.error('Error While Fetching Data!')
+      } else {
+        setFlowers(res.data);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -59,9 +64,10 @@ const FlowerShop = () => {
 
   return (
     <div >
+      <Toaster/>
       <div className="py-12 p-4" style={{ maxWidth: '70vw', margin: '0 auto', height: '100%' }}>
-        <div className='text-center'><h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-orange-500 rounded-lg p-1">
-          &nbsp;Gift <mark className="px-2 text-yellow-200 bg-blue-600 rounded dark:bg-blue-500">Flowers</mark> to Your Loved Ones
+        <div className='text-center'><h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-blue-600 rounded-lg p-1">
+          &nbsp;Gift <mark className="px-2 text-green-300 bg-blue-600 rounded dark:bg-pink-500">Flowers</mark> to Your Loved Ones
         </h1></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {flowers.map((flower, index) => (

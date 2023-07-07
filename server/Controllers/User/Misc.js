@@ -121,3 +121,21 @@ exports.userGetCart = async (req, res) => {
     res.status(500).json({ success: false, message: 'Internal server error' });
   }
 };
+
+exports.userRemove = async (req, res) => {
+  try {
+    const { id } = req.body;
+    // Perform the removal operation based on the provided ID
+    // For example, using Mongoose:
+    await Cart.findOneAndUpdate(
+      { "items._id": id },
+      { $pull: { items: { _id: id } } }
+    );
+
+    res.status(200).json({ message: "Item removed from cart successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({ error: "Internal server error" });
+  }
+};
+
