@@ -9,8 +9,10 @@ const CartPage = () => {
   const fetchCartItems = async () => {
     try {
       const email = localStorage.getItem('userMail');
+      console.log(email)
       const response = await getCartItems(email);
       setCartItems(response.data);
+      console.log(response.data)
     } catch (error) {
       console.error(error);
     }
@@ -62,7 +64,12 @@ const CartPage = () => {
         </h1></div>
 
 
-      {cartItems.length === 0 ? (
+      {   cartItems === null ? (
+        <h1 className="text-center p-3 mt-[10%] mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            Loading...
+        </h1>
+        ) :    cartItems.length === 0  ? (
+          
        <h1 class="text-center p-3 mt-[10%] mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Your Cart is Empty <i class="fa-solid fa-bag-shopping"></i></h1>
       ) : (
         <div className="flex flex-wrap -mx-2">

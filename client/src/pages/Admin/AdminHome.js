@@ -9,8 +9,18 @@ import toast, { Toaster } from "react-hot-toast";
 
 const GiftCard = ({ gift }) => {
   const handleRemove = () => {
-    // Handle the removal of the product here
-    console.log("Removing product:", gift.id);
+    
+    try {
+      const res = removeProduct(gift._id)
+      if (res.status === 200) {
+        toast.success("Item Removed")
+        
+      }
+      console.log("Removing product:", gift._id);
+    } catch (error) {
+      console.log(error)
+      toast.error(error)
+    }
 
 
   };
