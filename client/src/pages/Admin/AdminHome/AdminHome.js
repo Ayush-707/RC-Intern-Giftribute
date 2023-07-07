@@ -89,6 +89,7 @@ const AdminHome = () => {
   const handleAddProduct = () => {
     // Handle add product logic here
     console.log("Adding new product...");
+    navigate("/admin-add"); // Navigate to the "/admin-add" route
   };
 
   return (
