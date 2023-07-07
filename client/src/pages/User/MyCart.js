@@ -20,7 +20,7 @@ const CartPage = () => {
   useEffect(() => {
     // Apply styles to the body element
     Object.assign(document.body.style, {
-      backgroundImage: 'url(/form1.avif)',
+      backgroundImage: 'url(/cart.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -59,7 +59,7 @@ const CartPage = () => {
     <Toaster />
     <div className="container mx-auto p-4">
 
-      <div className='text-center px-5 w-auto'><h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-orange-500 rounded-lg p-1">
+      <div className='text-center px-5 w-auto'><h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-red-500 rounded-lg p-1">
         Shopping <mark className="px-2 text-yellow-200 bg-blue-600 rounded dark:bg-blue-500">Cart</mark> 
         </h1></div>
 
