@@ -9,7 +9,7 @@ import MyAccount from "./pages/User/MyAccount";
 import MyOrders from "./pages/User/MyOrders/MyOrders";
 import AdminLogin from "./pages/Admin/AdminLogin/AdminLogin";
 import AdminHome from "./pages/Admin/AdminHome/AdminHome";
-import AdminAddProduct from "./pages/Admin/AdminAddProduct/AdminAddProduct";
+import AdminAddProduct from "./pages/Admin/AdminAddproduct/AdminAddProduct";
 import MyCart from "./pages/User/MyCart/MyCart";
 import ContactUS from "./pages/User/ContactUs";
 import Flowers from "./pages/User/Gifts/Flowers";
