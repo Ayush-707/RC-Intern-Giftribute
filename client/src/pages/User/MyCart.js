@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getCartItems, cartRemove } from '../../../Services/APIs/UserAPI'; 
+import { getCartItems, cartRemove } from '../../Services/APIs/UserAPI'; 
 import toast, { Toaster } from "react-hot-toast";
 
 
@@ -63,7 +63,7 @@ const CartPage = () => {
 
 
       {cartItems.length === 0 ? (
-        <p className="text-gray-500">Your cart is empty.</p>
+       <h1 class="text-center p-3 mt-[10%] mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Your Cart is Empty <i class="fa-solid fa-bag-shopping"></i></h1>
       ) : (
         <div className="flex flex-wrap -mx-2">
           {cartItems.map((item) => (

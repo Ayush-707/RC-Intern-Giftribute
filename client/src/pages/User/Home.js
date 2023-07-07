@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { myGifts } from '../../../Services/APIs/UserAPI';
-import { addToCart } from '../../../Services/APIs/UserAPI';
+import { myGifts } from '../../Services/APIs/UserAPI';
+import { addToCart } from '../../Services/APIs/UserAPI';
 
 const cartAdd = async(id) => {
   //console.log(id)

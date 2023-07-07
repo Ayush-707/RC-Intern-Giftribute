@@ -59,7 +59,7 @@ const PlantShop = () => {
       <div className="py-12 p-4" style={{ maxWidth: '70vw', margin: '0 auto', height: '100%' }}>
         <div className="text-center">
           <h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-green-700 rounded-lg p-1">
-            &nbsp;Share the Gift of <mark className="px-2 text-black bg-orange-600 rounded dark:bg-orange-500">Green</mark> Goodness
+            &nbsp;Share the Gift of <mark className="px-2 text-yellow-200 bg-orange-600 rounded dark:bg-orange-500">Green</mark> Goodness
           </h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

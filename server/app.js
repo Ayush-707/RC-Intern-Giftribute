@@ -5,6 +5,7 @@ const cors = require("cors");
 require("./Database/Connection");
 const bodyParser = require('body-parser');
 const router = require("./Routes/UserRoutes")
+const router2 = require("./Routes/AdminRoutes")
 
 
 const PORT = 4002;
@@ -23,6 +24,8 @@ app.use(bodyParser.json());
 app.use(cors(options));
 app.use('/api',router)
 app.use(router)
+app.use('/api',router2)
+app.use(router2)
 
 
 
