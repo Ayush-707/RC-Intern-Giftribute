@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { myGifts } from '../../Services/APIs/UserAPI';
 import { addToCart } from '../../Services/APIs/UserAPI';
+import toast, { Toaster } from "react-hot-toast";
+
 
 const cartAdd = async(id) => {
   //console.log(id)
@@ -9,7 +11,17 @@ const cartAdd = async(id) => {
     giftId: id,
     userEmail: userMail
   }
-  const res = await addToCart(obj)
+  try {
+    const res = await addToCart(obj)
+    if (res.status === 200 ) {
+      toast.success(res.data.message)
+    } else {
+      toast.error("Error While Accessing Cart!")
+    }
+  } catch (error) {
+    toast.error(error)
+  }
+  
 }
 const GiftCard = ({ gift }) => {
   
@@ -61,7 +73,7 @@ const GiftShop = () => {
   return (
     <>
     <div >
-      
+      <Toaster/>
       <div className='text-center px-5'><h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-orange-500 rounded-lg p-1">
         Discover The Perfect <mark className="px-2 text-yellow-200 bg-blue-600 rounded dark:bg-blue-500">Gift</mark> For Every <mark className="px-2 text-yellow-200 bg-blue-600 rounded dark:bg-blue-500">Special</mark> Moment
         </h1></div>

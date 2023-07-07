@@ -66,13 +66,13 @@ const CartPage = () => {
 
       {   cartItems === null ? (
         <h1 className="text-center p-3 mt-[10%] mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            Loading...
+           <i class="fa-solid fa-spinner fa-spin"></i>
         </h1>
         ) :    cartItems.length === 0  ? (
-          
+
        <h1 class="text-center p-3 mt-[10%] mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Your Cart is Empty <i class="fa-solid fa-bag-shopping"></i></h1>
       ) : (
-        <div className="flex flex-wrap -mx-2">
+        <div className="flex flex-wrap justify-center items-center">
           {cartItems.map((item) => (
             <div key={item._id} className="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4">
               <div className="max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:bg-gray-100 hover:scale-105 transition-transform duration-300">

@@ -7,5 +7,5 @@ export const addProduct = async(data) => {
 }
 
 export const removeProduct = async(data) => {
-    return await commonrequest("DELETE", `${BACKEND_URL}/admin/remove-product`, data)
+    return await commonrequest("POST", `${BACKEND_URL}/admin/remove-product`, data)
 }
