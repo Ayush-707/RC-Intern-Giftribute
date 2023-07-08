@@ -10,12 +10,12 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import { useNavigate } from 'react-router-dom';
 
-const options = ['Flowers', 'Plants', 'Cakes & Chocolates', 'Others'];
+const options = ['Choose Category','Flowers', 'Plants', 'Cakes & Chocolates', 'Others'];
 
 export default function SplitButton() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(3);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
   const navigate = useNavigate()
 
   const handleClick = () => {
@@ -99,8 +99,9 @@ export default function SplitButton() {
                 <MenuList id="split-button-menu" autoFocusItem>
                   {options.map((option, index) => (
                     <MenuItem
-                      key={option}
+                      key={option} 
                       selected={index === selectedIndex}
+                      disabled={index === 0}
                       onClick={(event) => handleMenuItemClick(event, index)}
                     >
                       {option}
