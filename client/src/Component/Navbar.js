@@ -7,6 +7,7 @@ const Header = () => {
     isFollowMenuOpen: false,
     isProfileMenuOpen: false,
     isCartMenuOpen: false,
+    isAdminMenuOpen: false
   });
 
   const location = useLocation();
@@ -38,6 +39,12 @@ const Header = () => {
     { text: "Instagram", link: "#" },
     { text: "Facebook", link: "#" },
     { text: "Twitter", link: "#" },
+  ];
+
+  const adminArray = [
+    { text: "Login", link: "/admin-login" },
+    { text: "Logout", link: "#" },
+   
   ];
 
   
@@ -168,9 +175,33 @@ const Header = () => {
             )
           }
           <nav>
-            <a className="text-white text-3xl items-center" href="/admin-home" title="Admin Portal">
-            <span class="mdi mdi-account-supervisor-circle"></span>
-            </a>
+            
+            <div className="relative inline-block">
+                <a
+                  className={`text-white hover:underline text-lg cursor-pointer ${
+                    menuStates.isGiftsMenuOpen ? "underline" : ""
+                  }`}
+                  href="#"
+                  onClick={() => toggleMenu("isAdminMenuOpen")}
+                >
+                 <span class="mdi mdi-account-supervisor-circle" style={{fontSize: '180%'}}></span>
+                </a>{" "}
+                {menuStates.isAdminMenuOpen && (
+                  <div className="absolute z-10 top-8 right-0 bg-gray-800 py-2 px-4 rounded-lg text-white text-lg">
+                    {" "}
+                    {adminArray.map((item, index) => (
+                      <a
+                        href={item.link}
+                        className="block hover:scale-105 transform duration-200 ease-in-out"
+                        key={index}
+                      >
+                        {" "}
+                        {item.text}{" "}
+                      </a>
+                    ))}{" "}
+                  </div>
+                )}{" "}
+              </div>{" "}
           </nav>
             
           
