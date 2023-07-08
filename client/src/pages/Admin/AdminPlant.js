@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { myCakes } from "../../../Services/APIs/UserAPI";
-import { useNavigate } from "react-router-dom";
+import { myPlants } from "../../Services/APIs/UserAPI";
 import toast, { Toaster } from "react-hot-toast";
 
-const CakeCard = ({ cake }) => {
+const PlantCard = ({ plant }) => {
   const handleRemove = () => {
     // Handle the removal of the product here
-    console.log("Removing product:", cake.name);
+    console.log("Removing product:", plant.name);
   };
 
   return (
     <div className="p-2 max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:bg-gray-100 hover:scale-105 transition-transform duration-300">
       <img
         className="object-cover object-center h-56 w-full"
-        src={cake.image}
-        alt={cake.name}
+        src={plant.image}
+        alt={plant.name}
       />{" "}
       <div className="p-4">
-        <h2 className="text-gray-900 font-semibold text-lg"> {cake.name} </h2>{" "}
-        <p className="mt-2 text-gray-600"> {cake.description} </p>{" "}
+        <h2 className="text-gray-900 font-semibold text-lg"> {plant.name} </h2>{" "}
+        <p className="mt-2 text-gray-600"> {plant.description} </p>{" "}
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-gray-900 font-bold"> ₹{cake.price} </span>{" "}
+          <span className="text-gray-900 font-bold"> ₹{plant.price} </span>{" "}
           <button
             className="px-3 py-1 bg-red-600 text-white font-semibold rounded"
             onClick={handleRemove}
@@ -33,14 +32,13 @@ const CakeCard = ({ cake }) => {
   );
 };
 
-const CakeShop = () => {
-  const [cakes, setCakes] = useState([]);
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+const PlantShop = () => {
+  const [plants, setPlants] = useState([]);
 
   useEffect(() => {
     // Apply styles to the body element
     Object.assign(document.body.style, {
-      backgroundImage: "url(/cakes.jpg)",
+      backgroundImage: "url(/plants.webp)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -52,11 +50,11 @@ const CakeShop = () => {
 
   const getData = async () => {
     try {
-      const res = await myCakes();
+      const res = await myPlants();
       if (res.status !== 200) {
         toast.error("Error While Fetching Data!");
       } else {
-        setCakes(res.data);
+        setPlants(res.data);
       }
     } catch (error) {
       console.error(error);
@@ -67,36 +65,43 @@ const CakeShop = () => {
     getData();
   }, []);
 
-  const handleAddCake = () => {};
+  const handleAddPlant = () => {
+    // Handle adding a new plant here
+    console.log("Adding a new plant...");
+  };
 
   return (
     <div>
       <Toaster />
       <div
-        className="py-12 p-4"
-        style={{ maxWidth: "70vw", margin: "0 auto", height: "100%" }}
+        className="py-12 p-4 flex flex-col items-center"
+        style={{
+          maxWidth: "70vw",
+          margin: "0 auto",
+          height: "100%",
+        }}
       >
         <div className="text-center">
-          <h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-[#8b9ad9] rounded-lg p-1">
-            & nbsp; Gifts that{" "}
-            <mark className="px-2 text-red-400 bg-[#9be79b] rounded dark:bg-[#cbffc0]">
-              Sweeten{" "}
+          <h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-green-700 rounded-lg p-1">
+            &nbsp; Share the Gift of{" "}
+            <mark className="px-2 text-yellow-200 bg-orange-600 rounded dark:bg-orange-500">
+              Green{" "}
             </mark>{" "}
-            the Moments{" "}
+            Goodness{" "}
           </h1>{" "}
         </div>{" "}
-        <div className="flex justify-center mb-4">
+        <div className="mt-4">
           <button
             className="px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700 active:bg-red-800"
-            onClick={handleAddCake}
+            onClick={handleAddPlant}
           >
-            Add new Cake{" "}
+            Add new Plant{" "}
           </button>{" "}
         </div>{" "}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {" "}
-          {cakes.map((cake, index) => (
-            <CakeCard key={index} cake={cake} />
+          {plants.map((plant, index) => (
+            <PlantCard key={index} plant={plant} />
           ))}{" "}
         </div>{" "}
       </div>{" "}
@@ -104,4 +109,4 @@ const CakeShop = () => {
   );
 };
 
-export default CakeShop;
+export default PlantShop;

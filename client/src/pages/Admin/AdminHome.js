@@ -6,6 +6,7 @@ import FormDialog from "./FormDialog";
 import { myGifts } from "../../Services/APIs/UserAPI";
 import { addProduct, removeProduct } from "../../Services/APIs/AdminAPI";
 import toast, { Toaster } from "react-hot-toast";
+import SplitButton from "../../Component/SplitButton";
 
 const GiftCard = ({ gift }) => {
   const handleRemove = () => {
@@ -128,48 +129,7 @@ const AdminHome = () => {
     <>
       <Toaster />
       <div>
-        <div className="flex justify-between px-5 py-4">
-          <div>
-            <button
-              className="px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700"
-              onClick={handleLogout}
-            >
-              Logout{" "}
-            </button>{" "}
-          </div>{" "}
-          <div>
-            <button
-              className="px-4 py-2 text-white bg-green-600 rounded-md hover:bg-green-700 active:bg-green-800"
-              onClick={handleAddProduct}
-            >
-              Add New Product{" "}
-            </button>{" "}
-          </div>{" "}
-          <div>
-            <button
-              className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 active:bg-blue-800"
-              onClick={handleAddRemoveFlowers}
-            >
-              Add / Remove Flowers{" "}
-            </button>{" "}
-          </div>{" "}
-          <div>
-            <button
-              className="px-4 py-2 text-white bg-purple-600 rounded-md hover:bg-purple-700 active:bg-purple-800"
-              onClick={handleAddRemovePlants}
-            >
-              Add / Remove Plants{" "}
-            </button>{" "}
-          </div>{" "}
-          <div>
-            <button
-              className="px-4 py-2 text-white bg-yellow-600 rounded-md hover:bg-yellow-700 active:bg-yellow-800"
-              onClick={handleAddRemoveCakes}
-            >
-              Add / Remove Cakes{" "}
-            </button>{" "}
-          </div>{" "}
-        </div>{" "}
+        
         <div className="text-center px-5">
           <h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white bg-orange-500 rounded-lg p-1">
             Product Catalog{" "}

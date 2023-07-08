@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { useLocation } from "react-router-dom";
 
 import Home from "./pages/User/Home";
 import Login from "./pages/User/Login";
@@ -9,9 +10,9 @@ import MyAccount from "./pages/User/MyAccount";
 import MyOrders from "./pages/User/MyOrders";
 import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminHome from "./pages/Admin/AdminHome";
-import AdminFlower from "./pages/Admin/AdminFlower/AdminFlower";
-import AdminPlant from "./pages/Admin/AdminPlant/AdminPlant";
-import AdminCakes from "./pages/Admin/AdminCakes/AdminCakes";
+import AdminFlower from "./pages/Admin/AdminFlower";
+import AdminPlant from "./pages/Admin/AdminPlant";
+import AdminCakes from "./pages/Admin/AdminCakes";
 //import AdminAddProduct from "./pages/Admin/AdminAddProduct";
 import MyCart from "./pages/User/MyCart";
 import ContactUS from "./pages/User/ContactUs";
@@ -20,16 +21,40 @@ import Plants from "./pages/User/Gifts/Plants";
 import Cakes from "./pages/User/Gifts/Cakes";
 import Navbar from "./Component/Navbar";
 import SearchBar from "./Component/Search";
+import SplitButton from "./Component/SplitButton";
+
+
 
 function App() {
+  const location = useLocation()
+  const [buttons, showButtons] = useState(false)
+  
+  useEffect(() => {
+    if (location.pathname.includes("admin")) {
+      showButtons(true);
+
+    } else {
+      showButtons(false);
+    }
+  }, [location.pathname]);
+
   return (
     <div>
       <Navbar />
-      <div className="flex justify-end">
+      <div className="flex justify-between">
+        <div className="w-1/3 p-2">
+          {
+            buttons && (
+              <SplitButton/>
+            )
+          }
+        
+        </div>
+        
         <div className="w-1/3 p-1">
           <SearchBar />
-        </div>{" "}
-      </div>{" "}
+        </div>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />{" "}
         <Route path="/login" element={<Login />} />{" "}
@@ -38,9 +63,9 @@ function App() {
         <Route path="/my-orders" element={<MyOrders />} />{" "}
         <Route path="/admin-login" element={<AdminLogin />} />{" "}
         <Route path="/admin-home" element={<AdminHome />} />{" "}
-        <Route path="/admin-Flower" element={<AdminFlower />} />{" "}
-        <Route path="/admin-Plant" element={<AdminPlant />} />{" "}
-        <Route path="/admin-Cakes" element={<AdminCakes />} />{" "}
+        <Route path="/admin-flower" element={<AdminFlower />} />{" "}
+        <Route path="/admin-plant" element={<AdminPlant />} />{" "}
+        <Route path="/admin-cakes" element={<AdminCakes />} />{" "}
         <Route path="/my-cart" element={<MyCart />} />{" "}
         <Route path="/user/contact-us" element={<ContactUS />} />{" "}
         <Route path="/flowers" element={<Flowers />} />{" "}

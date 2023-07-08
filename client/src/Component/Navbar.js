@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [menuStates, setMenuStates] = useState({
@@ -8,11 +9,22 @@ const Header = () => {
     isCartMenuOpen: false,
   });
 
+  const location = useLocation();
+  const [options,setOptions] = useState(true)
+
+  useEffect(() => {
+    if (location.pathname.includes("admin")) {
+      setOptions(false);
+    } else {
+      setOptions(true);
+    }
+  }, [location.pathname]);
+
   const profileArray = [
     { text: "My Profile", link: "/my-account" },
     { text: "Login/Register", link: "/login" },
     { text: "My Orders", link: "/my-orders" },
-    { text: "Admin Login", link: "/admin-login" },
+    
   ];
 
   const giftsArray = [
@@ -27,6 +39,9 @@ const Header = () => {
     { text: "Facebook", link: "#" },
     { text: "Twitter", link: "#" },
   ];
+
+  
+
 
   const toggleMenu = (menu) => {
     setMenuStates((prevState) => ({
@@ -50,105 +65,117 @@ const Header = () => {
               Giftribute{" "}
             </h1>{" "}
           </div>{" "}
-          <nav className="space-x-4 font-semibold">
-            <a className="text-white hover:underline text-lg" href="/">
-              Home{" "}
-            </a>{" "}
-            <div className="relative inline-block">
-              <a
-                className={`text-white hover:underline text-lg cursor-pointer ${
-                  menuStates.isGiftsMenuOpen ? "underline" : ""
-                }`}
-                href="#"
-                onClick={() => toggleMenu("isGiftsMenuOpen")}
-              >
-                Gifts{" "}
+          {
+            options && (
+              <nav className="space-x-4 font-semibold">
+              <a className="text-white hover:underline text-lg" href="/">
+                Home{" "}
               </a>{" "}
-              {menuStates.isGiftsMenuOpen && (
-                <div className="absolute z-50 top-8 left-0 bg-gray-800 py-2 px-4 rounded-lg text-white text-lg">
-                  {" "}
-                  {giftsArray.map((item, index) => (
-                    <a
-                      href={item.link}
-                      className="block hover:scale-105 transform duration-200 ease-in-out"
-                      key={index}
-                    >
-                      {" "}
-                      {item.text}{" "}
-                    </a>
-                  ))}{" "}
-                </div>
-              )}{" "}
-            </div>{" "}
-            <div className="relative inline-block">
+              <div className="relative inline-block">
+                <a
+                  className={`text-white hover:underline text-lg cursor-pointer ${
+                    menuStates.isGiftsMenuOpen ? "underline" : ""
+                  }`}
+                  href="#"
+                  onClick={() => toggleMenu("isGiftsMenuOpen")}
+                >
+                  Gifts{" "}
+                </a>{" "}
+                {menuStates.isGiftsMenuOpen && (
+                  <div className="absolute z-50 top-8 left-0 bg-gray-800 py-2 px-4 rounded-lg text-white text-lg">
+                    {" "}
+                    {giftsArray.map((item, index) => (
+                      <a
+                        href={item.link}
+                        className="block hover:scale-105 transform duration-200 ease-in-out"
+                        key={index}
+                      >
+                        {" "}
+                        {item.text}{" "}
+                      </a>
+                    ))}{" "}
+                  </div>
+                )}{" "}
+              </div>{" "}
+              <div className="relative inline-block">
+                <a
+                  className={`text-white hover:underline text-lg cursor-pointer ${
+                    menuStates.isFollowMenuOpen ? "underline" : ""
+                  }`}
+                  href="#"
+                  onClick={() => toggleMenu("isFollowMenuOpen")}
+                >
+                  Follow{" "}
+                </a>{" "}
+                {menuStates.isFollowMenuOpen && (
+                  <div className="absolute z-10 top-8 left-0 bg-gray-800 py-2 px-4 rounded-lg text-white text-lg">
+                    {" "}
+                    {followArray.map((item, index) => (
+                      <a
+                        href={item.link}
+                        className="block hover:scale-105 transform duration-200 ease-in-out"
+                        key={index}
+                      >
+                        {" "}
+                        {item.text}{" "}
+                      </a>
+                    ))}{" "}
+                  </div>
+                )}{" "}
+              </div>{" "}
               <a
-                className={`text-white hover:underline text-lg cursor-pointer ${
-                  menuStates.isFollowMenuOpen ? "underline" : ""
-                }`}
-                href="#"
-                onClick={() => toggleMenu("isFollowMenuOpen")}
+                className="text-white hover:underline text-lg"
+                href="/user/contact-us"
               >
-                Follow{" "}
+                Contact US{" "}
               </a>{" "}
-              {menuStates.isFollowMenuOpen && (
-                <div className="absolute z-10 top-8 left-0 bg-gray-800 py-2 px-4 rounded-lg text-white text-lg">
-                  {" "}
-                  {followArray.map((item, index) => (
-                    <a
-                      href={item.link}
-                      className="block hover:scale-105 transform duration-200 ease-in-out"
-                      key={index}
-                    >
-                      {" "}
-                      {item.text}{" "}
-                    </a>
-                  ))}{" "}
-                </div>
-              )}{" "}
-            </div>{" "}
-            <a
-              className="text-white hover:underline text-lg"
-              href="/user/contact-us"
-            >
-              Contact US{" "}
-            </a>{" "}
-            <div className="relative inline-block">
+              <div className="relative inline-block">
+                <a
+                  className={`text-white hover:underline text-lg cursor-pointer ${
+                    menuStates.isProfileMenuOpen ? "underline" : ""
+                  }`}
+                  href="#"
+                  title="Profile"
+                  onClick={() => toggleMenu("isProfileMenuOpen")}
+                >
+                  <i className="fa-solid fa-user-large"> </i>{" "}
+                </a>{" "}
+                {menuStates.isProfileMenuOpen && (
+                  <div className="absolute z-10 top-8 right-0 bg-gray-800 py-3 px-4 rounded-lg text-white text-lg">
+                    {" "}
+                    {profileArray.map((item, index) => (
+                      <a
+                        href={item.link}
+                        className="block hover:scale-105 transform duration-200 ease-in-out"
+                        key={index}
+                      >
+                        {" "}
+                        {item.text}{" "}
+                      </a>
+                    ))}{" "}
+                  </div>
+                )}{" "}
+              </div>{" "}
               <a
-                className={`text-white hover:underline text-lg cursor-pointer ${
-                  menuStates.isProfileMenuOpen ? "underline" : ""
-                }`}
-                href="#"
-                title="Profile"
-                onClick={() => toggleMenu("isProfileMenuOpen")}
+                className="text-white text-2xl px-1"
+                href="/my-cart"
+                title="Cart"
               >
-                <i className="fa-solid fa-user-large"> </i>{" "}
+                <i className="fa-solid fa-cart-shopping"> </i>{" "}
               </a>{" "}
-              {menuStates.isProfileMenuOpen && (
-                <div className="absolute z-10 top-8 right-0 bg-gray-800 py-3 px-4 rounded-lg text-white text-lg">
-                  {" "}
-                  {profileArray.map((item, index) => (
-                    <a
-                      href={item.link}
-                      className="block hover:scale-105 transform duration-200 ease-in-out"
-                      key={index}
-                    >
-                      {" "}
-                      {item.text}{" "}
-                    </a>
-                  ))}{" "}
-                </div>
-              )}{" "}
-            </div>{" "}
-            <a
-              className="text-white text-2xl px-1"
-              href="/my-cart"
-              title="Cart"
-            >
-              <i className="fa-solid fa-cart-shopping"> </i>{" "}
-            </a>{" "}
-          </nav>{" "}
-        </div>{" "}
-      </header>{" "}
+              </nav>
+              
+            )
+          }
+          <nav>
+            <a className="text-white text-3xl items-center" href="/admin-home" title="Admin Portal">
+            <span class="mdi mdi-account-supervisor-circle"></span>
+            </a>
+          </nav>
+            
+          
+        </div>
+      </header>
     </>
   );
 };

@@ -47,7 +47,7 @@ export default function AdminLogin() {
       <div className="flex flex-col justify-center mt-7">
         <div className="w-full p-6 m-auto bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-700">
-            LOGIN{" "}
+            ADMIN LOGIN{" "}
           </h1>{" "}
           <form className="mt-6" onSubmit={handleSubmit}>
             <div className="mb-2">
