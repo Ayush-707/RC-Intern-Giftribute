@@ -15,7 +15,7 @@ const options = ['Flowers', 'Plants', 'Cakes & Chocolates', 'Others'];
 export default function SplitButton() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(3);
   const navigate = useNavigate()
 
   const handleClick = () => {
