@@ -177,6 +177,7 @@ const Header = () => {
           <nav>
             
             <div className="relative inline-block">
+              
                 <a
                   className={`text-white hover:underline text-lg cursor-pointer ${
                     menuStates.isGiftsMenuOpen ? "underline" : ""

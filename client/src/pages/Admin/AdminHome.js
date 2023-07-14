@@ -7,6 +7,11 @@ import { myGifts } from "../../Services/APIs/UserAPI";
 import { addProduct, removeProduct } from "../../Services/APIs/AdminAPI";
 import toast, { Toaster } from "react-hot-toast";
 import SplitButton from "../../Component/SplitButton";
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SendIcon from '@mui/icons-material/Send';
+import AddIcon from '@mui/icons-material/Add';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const GiftCard = ({ gift }) => {
   const handleRemove = () => {
@@ -135,6 +140,12 @@ const AdminHome = () => {
             Product Catalog{" "}
           </h1>{" "}
         </div>{" "}
+        <div className="text-center">
+        <Button variant="contained" color='secondary' endIcon={<AddCircleIcon />} onClick={handleAddProduct}>
+        Add New Product
+      </Button>
+        </div>
+        
         <div
           className="py-12 p-4"
           style={{ maxWidth: "70vw", margin: "0 auto", height: "100%" }}
