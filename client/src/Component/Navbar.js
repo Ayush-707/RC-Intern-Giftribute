@@ -72,9 +72,11 @@ const Header = () => {
               Giftribute{" "}
             </h1>{" "}
           </div>{" "}
+          <div className="flex">
           {
             options && (
               <nav className="space-x-4 font-semibold">
+                
               <a className="text-white hover:underline text-lg" href="/">
                 Home{" "}
               </a>{" "}
@@ -169,12 +171,13 @@ const Header = () => {
                 title="Cart"
               >
                 <i className="fa-solid fa-cart-shopping"> </i>{" "}
-              </a>{" "}
+              </a>
               </nav>
+              
               
             )
           }
-          <nav>
+          <nav className="space-x-4 font-semibold px-3 items-center">
             
             <div className="relative inline-block">
               
@@ -204,6 +207,7 @@ const Header = () => {
                 )}{" "}
               </div>{" "}
           </nav>
+          </div>
             
           
         </div>
