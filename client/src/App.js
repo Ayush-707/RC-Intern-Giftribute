@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { useLocation } from "react-router-dom";
@@ -23,16 +23,13 @@ import Navbar from "./Component/Navbar";
 import SearchBar from "./Component/Search";
 import SplitButton from "./Component/SplitButton";
 
-
-
 function App() {
-  const location = useLocation()
-  const [buttons, showButtons] = useState(false)
-  
+  const location = useLocation();
+  const [buttons, showButtons] = useState(false);
+
   useEffect(() => {
     if (location.pathname.includes("admin")) {
       showButtons(true);
-
     } else {
       showButtons(false);
     }
@@ -42,19 +39,11 @@ function App() {
     <div>
       <Navbar />
       <div className="flex justify-between">
-        <div className="w-1/3 p-2">
-          {
-            buttons && (
-              <SplitButton/>
-            )
-          }
-        
-        </div>
-        
+        <div className="w-1/3 p-2"> {buttons && <SplitButton />}</div>
         <div className="w-1/3 p-1">
           <SearchBar />
-        </div>
-      </div>
+        </div>{" "}
+      </div>{" "}
       <Routes>
         <Route path="/" element={<Home />} />{" "}
         <Route path="/login" element={<Login />} />{" "}
