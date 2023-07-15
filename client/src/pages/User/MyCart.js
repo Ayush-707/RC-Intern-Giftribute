@@ -74,7 +74,7 @@ const CartPage = () => {
 
     // Add your payment processing logic here
     // For example, you can show a success message using toast:
-    toast.success("Payment Successful");
+    toast.success("Order Successfully Placed");
 
     // After the payment is successful, you can clear the cart or perform other actions if needed.
     // For this example, we'll simply close the checkout page and reset selectedProduct state.
@@ -135,7 +135,7 @@ const CartPage = () => {
                       <div className="flex justify-between pb-2">
                         <span className="text-gray-900 font-bold">
                           {" "}
-                          ₹{item.productId.price}{" "}
+                          ₹ {item.productId.price}{" "}
                         </span>{" "}
                         <div className="flex items-center">
                           <div className="flex-grow"> </div>{" "}

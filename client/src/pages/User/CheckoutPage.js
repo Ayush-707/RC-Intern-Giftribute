@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 const CheckoutPage = ({ product, onProceedPayment, onClose }) => {
   const [quantity, setQuantity] = useState(1);
+  const [showWarning, setShowWarning] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleQuantityChange = (event) => {
     setQuantity(parseInt(event.target.value, 10));
@@ -9,12 +11,59 @@ const CheckoutPage = ({ product, onProceedPayment, onClose }) => {
 
   const totalPrice = product.price * quantity;
 
-  const handlePayment = () => {
+  const handlePlaceOrder = () => {
+    setShowWarning(true);
+  };
+
+  const handleConfirmOrder = () => {
+    setShowWarning(false);
+    setShowConfirmation(true);
+    // Proceed with order placement (e.g., API call to place the order)
     onProceedPayment(product, quantity);
+  };
+
+  const handleGoBack = () => {
+    setShowWarning(false);
+    setShowConfirmation(false);
   };
 
   return (
     <div className="bg-white p-4 max-w-md mx-auto mt-10 rounded-md shadow-lg">
+      {" "}
+      {showWarning && (
+        <div className="bg-yellow-200 rounded-lg p-4 mb-4">
+          <p className="text-lg font-bold"> Warning: Cash on Delivery </p>{" "}
+          <p>
+            Your order will be processed as Cash on Delivery.Click "Confirm" to
+            proceed.{" "}
+          </p>{" "}
+          <button
+            onClick={handleConfirmOrder}
+            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md mt-4"
+          >
+            Confirm{" "}
+          </button>{" "}
+          <button
+            onClick={handleGoBack}
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-md mt-4 ml-2"
+          >
+            Go Back{" "}
+          </button>{" "}
+        </div>
+      )}{" "}
+      {showConfirmation && (
+        <div className="bg-green-200 rounded-lg p-4 mb-4">
+          <p className="text-lg font-bold">
+            Congratulations!Your Order is Placed{" "}
+          </p>{" "}
+          <button
+            onClick={handleGoBack}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-4"
+          >
+            Go Back{" "}
+          </button>{" "}
+        </div>
+      )}{" "}
       <div className="bg-purple-600 rounded-lg p-4 mb-4 text-white">
         <h1 className="text-3xl font-bold"> Checkout </h1>{" "}
         <p className="text-lg">
@@ -34,12 +83,8 @@ const CheckoutPage = ({ product, onProceedPayment, onClose }) => {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <line x1="18" y1="6" x2="6" y2="18">
-              {" "}
-            </line>{" "}
-            <line x1="6" y1="6" x2="18" y2="18">
-              {" "}
-            </line>{" "}
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
           </svg>{" "}
         </button>{" "}
       </div>{" "}
@@ -67,12 +112,14 @@ const CheckoutPage = ({ product, onProceedPayment, onClose }) => {
         {" "}
         Total: ₹{totalPrice.toFixed(2)}{" "}
       </p>{" "}
-      <button
-        onClick={handlePayment}
-        className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md"
-      >
-        Proceed to Payment{" "}
-      </button>{" "}
+      {!showWarning && !showConfirmation && (
+        <button
+          onClick={handlePlaceOrder}
+          className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md"
+        >
+          Place Order{" "}
+        </button>
+      )}{" "}
     </div>
   );
 };
