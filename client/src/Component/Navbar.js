@@ -186,6 +186,7 @@ const Header = () => {
                     menuStates.isGiftsMenuOpen ? "underline" : ""
                   }`}
                   href="#"
+                  title = "Admin Portal"
                   onClick={() => toggleMenu("isAdminMenuOpen")}
                 >
                  <span class="mdi mdi-account-supervisor-circle" style={{fontSize: '180%'}}></span>
