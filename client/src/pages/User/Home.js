@@ -65,7 +65,6 @@ const GiftShop = () => {
   useEffect(() => {
     // Apply styles to the body element
     Object.assign(document.body.style, {
-      backgroundImage: "url(/form1.avif)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
