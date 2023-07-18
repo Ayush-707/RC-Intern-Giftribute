@@ -13,7 +13,7 @@ import AdminHome from "./pages/Admin/AdminHome";
 import AdminFlower from "./pages/Admin/AdminFlower";
 import AdminPlant from "./pages/Admin/AdminPlant";
 import AdminCakes from "./pages/Admin/AdminCakes";
-//import AdminAddProduct from "./pages/Admin/AdminAddProduct";
+import LandingPage from "./pages/LandingPage";
 import MyCart from "./pages/User/MyCart";
 import ContactUS from "./pages/User/ContactUs";
 import Flowers from "./pages/User/Gifts/Flowers";
@@ -45,7 +45,8 @@ function App() {
         </div>{" "}
       </div>{" "}
       <Routes>
-        <Route path="/" element={<Home />} />{" "}
+        <Route path="/" element={<LandingPage />} />{" "}
+        <Route path="/home" element={<Home />} />{" "}
         <Route path="/login" element={<Login />} />{" "}
         <Route path="/register" element={<Register />} />{" "}
         <Route path="/my-account" element={<MyAccount />} />{" "}
