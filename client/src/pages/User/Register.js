@@ -201,35 +201,28 @@ export default function UserSignup() {
     console.log(res.data);
   };
 
-  // const styles = {
-  //   backgroundImage: 'url(/orange.avif)',
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center',
-  //   backgroundRepeat: 'no-repeat',
-  //   height: '100%',
-  //   overflow: 'hidden'
-  // };
   useEffect(() => {
     // Apply styles to the body element
     Object.assign(document.body.style, {
-      backgroundImage: 'url(/orange.avif)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed',
-      minHeight: '100vh',
-      overflowY: 'auto'
-     
-      
+      backgroundImage: "url(/login1.jpg)",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundAttachment: "fixed",
+      minHeight: "100vh",
+      overflowY: "auto",
     });
   }, []);
 
   return (
-    <div >
+    <div>
       <Toaster />
       <div className="flex flex-col justify-center min-h-screen pb-4">
-        <div className="w-full p-6 m-auto mt-10 bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
-          <h1 className="text-3xl font-semibold text-center text-blue-700">SIGN UP</h1>
+        <div className="w-full p-6 m-auto mt-10 bg-white rounded-md shadow-xl lg:max-w-xl">
+          <h1 className="text-3xl font-semibold text-center text-blue-700">
+            {" "}
+            SIGN UP{" "}
+          </h1>{" "}
           <form className="p-3" onSubmit={handleSubmit}>
             <div className="mb-2">
               <label
@@ -240,7 +233,7 @@ export default function UserSignup() {
               </label>{" "}
               <input
                 type="text"
-                className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 value={name}
                 onChange={handleNameChange}
               />{" "}
@@ -254,7 +247,7 @@ export default function UserSignup() {
               </label>{" "}
               <input
                 type="email"
-                className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 value={email}
                 onChange={handleEmailChange}
               />{" "}
@@ -268,7 +261,7 @@ export default function UserSignup() {
               </label>{" "}
               <input
                 type="password"
-                className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 value={password}
                 onChange={handlePasswordChange}
               />{" "}
@@ -282,7 +275,7 @@ export default function UserSignup() {
               </label>{" "}
               <input
                 type="text"
-                className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 value={address}
                 onChange={handleAddressChange}
               />{" "}
@@ -296,7 +289,7 @@ export default function UserSignup() {
               </label>{" "}
               <input
                 type="text"
-                className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 value={phoneNumber}
                 onChange={handlePhoneNumberChange}
               />{" "}
