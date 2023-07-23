@@ -68,7 +68,7 @@ const Header = () => {
             {/* <h1 className="text-3xl text-white font-extrabold -mb-[2%]">
               {" "}
               Giftly{" "}
-            </h1>{" "}
+  </h1>{" "}*/}
           </div>{" "}
           <div className="flex">
             {" "}
