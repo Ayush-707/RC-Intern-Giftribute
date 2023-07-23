@@ -70,10 +70,10 @@ const Header = () => {
         className = "h-12 w-auto mr-2" / >
         <
         h1 className = "text-3xl text-white font-extrabold -mb-[2%]" > { " " }
-        Giftly { " " } <
+        Giftribute { " " } <
         /h1>{" "} <
         /div>{" "} <
-        div className = "flex" > { " " } {
+        div className = "flex" > {
             options && ( <
                 nav className = "space-x-4 font-semibold" >
                 <
@@ -164,10 +164,10 @@ const Header = () => {
                 title = "Cart" >
                 <
                 i className = "fa-solid fa-cart-shopping" > < /i>{" "} <
-                /a>{" "} <
+                /a> <
                 /nav>
             )
-        } { " " } <
+        } <
         nav className = "space-x-4 font-semibold px-3 items-center" >
         <
         div className = "relative inline-block" >
@@ -183,7 +183,7 @@ const Header = () => {
         span class = "mdi mdi-account-supervisor-circle"
         style = {
             { fontSize: "180%" } } >
-        < /span>{" "} <
+        < /span> <
         /a>{" "} {
             menuStates.isAdminMenuOpen && ( <
                 div className = "absolute z-10 top-8 right-0 bg-gray-800 py-2 px-4 rounded-lg text-white text-lg" > { " " } {
@@ -199,10 +199,10 @@ const Header = () => {
             )
         } { " " } <
         /div>{" "} <
-        /nav>{" "} <
-        /div>{" "} <
-        /div>{" "} <
-        /header>{" "} <
+        /nav> <
+        /div> <
+        /div> <
+        /header> <
         />
     );
 };

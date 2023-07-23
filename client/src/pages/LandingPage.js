@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
@@ -11,6 +11,21 @@ function LoginPage() {
   const handleCustomerLoginClick = () => {
     navigate("/home");
   };
+
+  useEffect(() => {
+    // Apply styles to the body element
+    Object.assign(document.body.style, {
+      backgroundColor: 'white',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      backgroundAttachment: "fixed",
+      minHeight: "100vh",
+      overflowY: "auto",
+    });
+  }, []);
+
+  
 
   return (
     <>

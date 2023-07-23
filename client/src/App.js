@@ -28,7 +28,7 @@ function App() {
   const [buttons, showButtons] = useState(false);
 
   useEffect(() => {
-    if (location.pathname.includes("admin")) {
+    if (location.pathname.includes("admin") && !location.pathname.match("admin-login")) {
       showButtons(true);
     } else {
       showButtons(false);
