@@ -66,11 +66,11 @@ const Header = () => {
       <header className="bg-gray-900 py-4 shadow-md sticky top-0 z-40">
         <div className="mx-[1.5%] flex items-center justify-between">
           <div className="flex items-center">
-            <img src="/logo.jpeg" alt="Logo" className="h-12 w-auto mr-2" />
-            <h1 className="text-3xl text-white font-extrabold -mb-[2%]">
+            <img src="/giftly.png" alt="Logo" className="h-14 w-auto  mr-2" />
+            {/* <h1 className="text-3xl text-white font-extrabold -mb-[2%]">
               {" "}
               Giftribute{" "}
-            </h1>{" "}
+            </h1>{" "} */}
           </div>{" "}
           <div className="flex">
           {
