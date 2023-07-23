@@ -177,37 +177,7 @@ const Header = () => {
               
             )
           }
-          <nav className="space-x-4 font-semibold px-3 items-center">
-            
-            <div className="relative inline-block">
-              
-                <a
-                  className={`text-white hover:underline text-lg cursor-pointer ${
-                    menuStates.isGiftsMenuOpen ? "underline" : ""
-                  }`}
-                  href="#"
-                  title = "Admin Portal"
-                  onClick={() => toggleMenu("isAdminMenuOpen")}
-                >
-                 <span class="mdi mdi-account-supervisor-circle" style={{fontSize: '180%'}}></span>
-                </a>{" "}
-                {menuStates.isAdminMenuOpen && (
-                  <div className="absolute z-10 top-8 right-0 bg-gray-800 py-2 px-4 rounded-lg text-white text-lg">
-                    {" "}
-                    {adminArray.map((item, index) => (
-                      <a
-                        href={item.link}
-                        className="block hover:scale-105 transform duration-200 ease-in-out"
-                        key={index}
-                      >
-                        {" "}
-                        {item.text}{" "}
-                      </a>
-                    ))}{" "}
-                  </div>
-                )}{" "}
-              </div>{" "}
-          </nav>
+         
           </div>
             
           
