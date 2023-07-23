@@ -163,8 +163,8 @@ export default function UserLogin() {
   return (
     <div>
       <Toaster />
-      <div className="flex flex-col justify-center items-center mt-7">
-        <div className="w-full p-6 m-auto bg-white rounded-lg shadow-xl lg:max-w-xl">
+      <div className="flex flex-col mt-7">
+        <div className="w-full p-6 ml-[10%] bg-gray-300 rounded-lg shadow-xl lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-700 mb-6">
             LOGIN{" "}
           </h1>{" "}

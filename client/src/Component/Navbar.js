@@ -32,7 +32,7 @@ const Header = () => {
     { text: 'Flowers', link: '/flowers' },
     { text: 'Plants', link: '/plants' },
     { text: 'Cakes/Chocolates', link: '/cakes' },
-    { text: 'Others', link: '/' },
+   
   ];
 
   const followArray = [
@@ -66,7 +66,10 @@ const Header = () => {
       <header className="bg-gray-900 py-4 shadow-md sticky top-0 z-40">
         <div className="mx-[1.5%] flex items-center justify-between">
           <div className="flex items-center">
+            <a href='/home'>
             <img src="/giftly.png" alt="Logo" className="h-14 w-auto  mr-2" />
+
+            </a>
             {/* <h1 className="text-3xl text-white font-extrabold -mb-[2%]">
               {" "}
               Giftribute{" "}

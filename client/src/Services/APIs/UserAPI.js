@@ -45,6 +45,11 @@ export const getCartItems = async(email) => {
 export const cartRemove = async(data) => {
     return await commonrequest("DELETE", `${BACKEND_URL}/user/remove-item`, data)
 }
+
+export const buyItem = async(data) => {
+    return await commonrequest("POST", `${BACKEND_URL}/user/buy`, data)
+}
+  
   
 
 

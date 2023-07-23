@@ -29,5 +29,7 @@ router.get("/user/get-cart", userMisc.userGetCart)
 
 router.delete("/user/remove-item", userMisc.userRemove)
 
+router.post("/user/buy", userMisc.userBuy)
+
 
 module.exports = router;

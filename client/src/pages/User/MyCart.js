@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getCartItems, cartRemove } from "../../Services/APIs/UserAPI";
+import { getCartItems, cartRemove, buyItem } from "../../Services/APIs/UserAPI";
 import toast, { Toaster } from "react-hot-toast";
 
 import CheckoutPage from "./CheckoutPage";
@@ -68,13 +68,24 @@ const CartPage = () => {
   };
 
   // Function to handle the payment and reset selectedProduct state
-  const handleProceedPayment = (product, quantity) => {
+  const handleProceedPayment = async(product, quantity) => {
     const totalPrice = product.price * quantity;
     console.log("Total Bill:", totalPrice);
 
     // Add your payment processing logic here
     // For example, you can show a success message using toast:
-    toast.success("Order Successfully Placed");
+    const myGift = {
+      prod: product,
+      quan: quantity
+    }
+    const res = await buyItem(myGift)
+     
+    if(res.status === 200) {
+      toast.success("Order Successfully Placed");
+    } else {
+      toast.error('Unable to Process!')
+    }
+    
 
     // After the payment is successful, you can clear the cart or perform other actions if needed.
     // For this example, we'll simply close the checkout page and reset selectedProduct state.
@@ -85,11 +96,14 @@ const CartPage = () => {
     <>
       <Toaster />{" "}
       {isCheckoutOpen && selectedProduct && (
-        <CheckoutPage
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50 overflow-y-auto">
+          <CheckoutPage
           product={selectedProduct}
           onClose={handleCloseCheckout}
           onProceedPayment={handleProceedPayment}
         />
+        </div>
+        
       )}{" "}
       <div className="container mx-auto p-4">
         <div className="text-center px-5 w-auto">
@@ -137,12 +151,12 @@ const CartPage = () => {
                           {" "}
                           ₹ {item.productId.price}{" "}
                         </span>{" "}
-                        <div className="flex items-center">
+                        {/* <div className="flex items-center">
                           <div className="flex-grow"> </div>{" "}
                           <span className="text-gray-700 font-semibold mr-3">
                             Quantity: {item.quantity}{" "}
                           </span>{" "}
-                        </div>{" "}
+                        </div>{" "} */}
                       </div>{" "}
                       <div className="flex">
                         <button

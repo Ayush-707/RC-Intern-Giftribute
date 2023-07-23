@@ -65,6 +65,7 @@ const GiftShop = () => {
   useEffect(() => {
     // Apply styles to the body element
     Object.assign(document.body.style, {
+      backgroundImage: 'url(/gray.jpg)',
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -80,18 +81,14 @@ const GiftShop = () => {
         <Toaster />
         <div className="text-center px-5">
           <h1
-            className="mb-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl custom-heading"
+            className="bg-blue-200 mb-4 text-3xl font-extrabold leading-none tracking-tight md:text-4xl lg:text-5xl custom-heading"
             style={{
-              fontFamily: "Lobster, cursive",
+              fontFamily: "Constantia",
               animation: "animate__zoomIn 1s",
               // Add any other custom styles for the heading here
             }}
           >
-            Discover the perfect <span className="text-indigo-600"> Gift </span>
-            For Every <span className="text-red-500">
-              {" "}
-              special{" "}
-            </span> Moment{" "}
+            Discover the Perfect Gift For Every Special Moment 
           </h1>{" "}
         </div>{" "}
         <div className="py-12 px-4 md:px-8 lg:px-16">

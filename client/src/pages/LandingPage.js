@@ -29,6 +29,11 @@ function LoginPage() {
 
   return (
     <>
+    <div className="text-center w-full border-3 border-black">
+    <h2 class="text-6xl font-extrabold text-black " style={{fontFamily: 'Constantia'}}>GIFTLY</h2>
+<p class=" text-4xl text-green-500 font-bold">Welcome!</p>
+    </div>
+    
       <div
         className="flex flex-col items-center justify-start"
         style={{
@@ -37,7 +42,7 @@ function LoginPage() {
           overflow: "hidden", // Make the page unscrollable
         }}
       >
-        <div className="flex flex-col md:flex-row items-center mt-36">
+        <div className="flex flex-col md:flex-row items-center mt-16">
           <div
             className="card bg-gray-300 rounded-lg shadow-lg w-80 p-6 m-4 cursor-pointer transform transition duration-300 hover:shadow-xl hover:scale-105 hover:text-black flex flex-col justify-center items-center hover:bg-gray-400 border-4 border-blue-400"
             onClick={handleEmployeeLoginClick}

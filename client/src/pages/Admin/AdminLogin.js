@@ -44,10 +44,10 @@ export default function AdminLogin() {
   return (
     <div>
       <Toaster />
-      <div className="flex flex-col justify-start items-center h-screen pt-50">
+      <div className="flex flex-col h-screen pt-20">
         {" "}
         {/* Add pt-50 to shift the form 50 pixels down */}{" "}
-        <div className="w-full max-w-sm p-6 m-auto bg-white rounded-lg shadow-xl">
+        <div className="w-full max-w-sm p-6 ml-[10%] bg-white rounded-lg shadow-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-700 mb-6">
             ADMIN LOGIN{" "}
           </h1>{" "}

@@ -28,7 +28,7 @@ const CheckoutPage = ({ product, onProceedPayment, onClose }) => {
   };
 
   return (
-    <div className="bg-white p-4 max-w-md mx-auto mt-10 rounded-md shadow-lg">
+    <div className="bg-white p-4 max-w-md mx-auto mt-[18%] mb-[10%] rounded-md shadow-lg">
       {" "}
       {showWarning && (
         <div className="bg-yellow-200 rounded-lg p-4 mb-4">

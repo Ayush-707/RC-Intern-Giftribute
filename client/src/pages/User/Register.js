@@ -217,8 +217,8 @@ export default function UserSignup() {
   return (
     <div>
       <Toaster />
-      <div className="flex flex-col justify-center min-h-screen pb-4">
-        <div className="w-full p-6 m-auto mt-10 bg-white rounded-md shadow-xl lg:max-w-xl">
+      <div className="flex flex-col min-h-screen pb-4">
+        <div className="w-full p-6 ml-[10%] bg-gray-300 rounded-md shadow-xl lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-700">
             {" "}
             SIGN UP{" "}
