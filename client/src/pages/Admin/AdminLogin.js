@@ -31,7 +31,7 @@ export default function AdminLogin() {
   useEffect(() => {
     // Apply styles to the body element
     Object.assign(document.body.style, {
-      backgroundImage: "url(/orange.avif)",
+      backgroundImage: "url(/login1.jpg)",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -44,13 +44,15 @@ export default function AdminLogin() {
   return (
     <div>
       <Toaster />
-      <div className="flex flex-col justify-center mt-7">
-        <div className="w-full p-6 m-auto bg-gray-200 rounded-md shadow-xl shadow-blue-600/40 ring-2 ring-blue-600 lg:max-w-xl">
-          <h1 className="text-3xl font-semibold text-center text-blue-700">
+      <div className="flex flex-col justify-start items-center h-screen pt-50">
+        {" "}
+        {/* Add pt-50 to shift the form 50 pixels down */}{" "}
+        <div className="w-full max-w-sm p-6 m-auto bg-white rounded-lg shadow-xl">
+          <h1 className="text-3xl font-semibold text-center text-blue-700 mb-6">
             ADMIN LOGIN{" "}
           </h1>{" "}
           <form className="mt-6" onSubmit={handleSubmit}>
-            <div className="mb-2">
+            <div className="mb-4">
               <label
                 htmlFor="email"
                 className="block text-sm font-semibold text-gray-800"
@@ -59,12 +61,13 @@ export default function AdminLogin() {
               </label>{" "}
               <input
                 type="email"
-                className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-3 mt-2 text-gray-700 bg-gray-100 border rounded-md focus:ring-blue-400 focus:ring-opacity-40 focus:outline-none"
                 value={email}
                 onChange={handleEmailChange}
-              />{" "}
+                placeholder="Enter your email"
+              />
             </div>{" "}
-            <div className="mb-2">
+            <div className="mb-4">
               <label
                 htmlFor="password"
                 className="block text-sm font-semibold text-gray-800"
@@ -73,13 +76,14 @@ export default function AdminLogin() {
               </label>{" "}
               <input
                 type="password"
-                className="block w-full px-4 py-2 mt-2 text-gray-500 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-3 mt-2 text-gray-700 bg-gray-100 border rounded-md focus:ring-blue-400 focus:ring-opacity-40 focus:outline-none"
                 value={password}
                 onChange={handlePasswordChange}
-              />{" "}
+                placeholder="Enter your password"
+              />
             </div>{" "}
             <div className="mt-6">
-              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+              <button className="w-full px-6 py-3 text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
                 Login{" "}
               </button>{" "}
             </div>{" "}
